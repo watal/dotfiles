@@ -1,9 +1,6 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-[[plugins]]
-repo = 'Shougo/context_filetype.vim'
-
 #colorscheme-------------------------------
 [[plugins]] # jellybeans
 repo = 'nanotech/jellybeans.vim'
@@ -39,27 +36,8 @@ repo = 'vim-scripts/vydark'
 repo = 'vim-scripts/ibmedit.vim'
 #end colorscheme---------------------------
 
-[[plugins]] # ステータスライン
+[[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = '''
     let g:lightline = {'colorscheme': 'wombat'}
 '''
-
-[[plugins]] # Toml
-repo  = 'cespare/vim-toml'
-
-[[plugins]] # Golang
-repo = 'fatih/vim-go'
-
-[[plugins]] # Japanese doc
-repo = 'vim-jp/vimdoc-ja'
-hook_add = '''
-    set helplang=ja,en
-'''
-
-[[plugin]] #slim highlight
-# repo = 'slim-template/vim-slim'
-repo = 'slim-template/vim-slim.git'
-
-[[plugin]] #javascript highlight
-repo = 'jelera/vim-javascript-syntax'

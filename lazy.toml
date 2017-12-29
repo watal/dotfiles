@@ -1,9 +1,23 @@
-[[plugins]] # Plugin to easily access Most Recently Used (MRU) files
-repo = 'Shougo/neomru.vim'
-on_source = 'denite.nvim'
-on_path = '.*'
+[[plugins]] # golang
+repo = 'fatih/vim-go'
+on_ft = ['go']
 
-[[plugins]] # Yank
-repo = 'Shougo/neoyank.vim'
-on_source = 'denite.nvim'
-on_event = 'TextYankPost'
+[[plugins]] # markdown
+repo = 'rcmdnk/vim-markdown'
+on_ft = ['md', 'markdown']
+
+[[plugins]] # Toml
+repo  = 'cespare/vim-toml'
+on_ft = ['toml']
+
+[[plugins]] #slim
+repo = 'slim-template/vim-slim'
+on_ft = ['slim']
+
+[[plugins]] #javascript
+repo = 'othree/yajs.vim'
+on_ft = ['javascript']
+
+[[plugins]] #jsx
+repo = 'maxmellon/vim-jsx-pretty'
+on_ft = ['javascript']
