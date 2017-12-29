@@ -1,0 +1,65 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+#colorscheme-------------------------------
+[[plugins]] # jellybeans
+repo = 'nanotech/jellybeans.vim'
+
+[[plugins]] # hybrid
+repo = 'w0ng/vim-hybrid'
+
+[[plugins]] # iceberg
+repo = 'cocopon/iceberg.vim'
+
+[[plugins]] # nord
+repo = 'arcticicestudio/nord-vim'
+
+[[plugins]] # Apprentice
+repo = 'romainl/Apprentice'
+
+[[plugins]] # vim-deep-space
+repo = 'tyrannicaltoucan/vim-deep-space'
+
+[[plugins]] # vim-material-theme
+repo = 'jdkanani/vim-material-theme'
+
+[[plugins]] # mhartington/oceanic-next
+repo = 'mhartington/oceanic-next'
+
+[[plugins]] # gosukiwi/vim-atom-dark
+repo = 'gosukiwi/vim-atom-dark'
+
+[[plugins]] # vim-scripts/vydark
+repo = 'vim-scripts/vydark'
+
+[[plugins]] # vim-scripts/ibmedit.vim
+repo = 'vim-scripts/ibmedit.vim'
+#end colorscheme---------------------------
+
+[[plugins]] # ステータスライン
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+    let g:lightline = {'colorscheme': 'wombat'}
+'''
+
+[[plugins]] # Toml
+repo  = 'cespare/vim-toml'
+
+[[plugins]] # Golang
+repo = 'fatih/vim-go'
+
+[[plugins]] # Japanese doc
+repo = 'vim-jp/vimdoc-ja'
+hook_add = '''
+    set helplang=ja,en
+'''
+
+[[plugin]] #slim highlight
+# repo = 'slim-template/vim-slim'
+repo = 'slim-template/vim-slim.git'
+
+[[plugin]] #javascript highlight
+repo = 'jelera/vim-javascript-syntax'
