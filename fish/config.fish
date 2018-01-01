@@ -1,11 +1,9 @@
 . ~/.config/fish/aliases.fish
 . ~/.config/fish/anyenv.fish
 
+#peco
 function fish_user_key_bindings
-    #search history
-    bind \cr 'peco_select_history (commandline -b)'
-    #management git
-    bind \c] 'peco_select_ghq_repository'
+    bind \cr peco_select_history
 end
 
 set -g theme_display_user yes
