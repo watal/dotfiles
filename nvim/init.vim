@@ -142,8 +142,11 @@ nnoremap gk k
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
 nnoremap Q <Nop>
-noremap <Space>h  ^
-noremap <Space>l  $
+nnoremap <Space>h  ^
+nnoremap <Space>l  $
+nnoremap <Space>w  :<C-u>w<CR>
+nnoremap <Space>q  :<C-u>q<CR>
+nnoremap <Space>Q  :<C-u>q!<CR>
 " jjでインサートモードを抜ける
 inoremap <silent> jj <ESC>
 " バックスペースキーで行頭を削除する
@@ -187,7 +190,7 @@ autocmd MyAutoCmd ColorScheme * highlight Constant ctermfg=179
 autocmd MyAutoCmd ColorScheme * highlight Function ctermfg=180
 
 " SpecialKey for Iceberg
-autocmd MyAutoCmd ColorScheme * highlight SpecialKey ctermfg=21
+autocmd MyAutoCmd ColorScheme * highlight SpecialKey ctermfg=110
 autocmd MyAutoCmd ColorScheme * highlight Specialkey ctermbg=none
 
 " Error for Iceberg
