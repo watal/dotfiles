@@ -132,6 +132,8 @@ set hlsearch
 nnoremap <ESC><ESC> :nohlsearch<CR>
 
 " 操作系
+" リーダーの設定
+let mapleader = "\<Space>"
 " キーマップ
 nnoremap ; :
 nnoremap : ;
@@ -142,11 +144,16 @@ nnoremap gk k
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
 nnoremap Q <Nop>
-nnoremap <Space>h  ^
-nnoremap <Space>l  $
-nnoremap <Space>w  :<C-u>w<CR>
-nnoremap <Space>q  :<C-u>q<CR>
-nnoremap <Space>Q  :<C-u>q!<CR>
+noremap <Leader>h  ^
+noremap <Leader>l  $
+nnoremap <Leader>w  :<C-u>w<CR>
+nnoremap <Leader>q  :<C-u>q<CR>
+nnoremap <Leader>Q  :<C-u>q!<CR>
+" 貼り付けたテキストの末尾へ自動的に移動する
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
 " jjでインサートモードを抜ける
 inoremap <silent> jj <ESC>
 " バックスペースキーで行頭を削除する
@@ -174,6 +181,8 @@ function UpdateColorScheme()
 endfunction
 autocmd MyAutoCmd BufReadPost,BufEnter * call UpdateColorScheme()
 
+autocmd MyAutoCmd QuickFixCmdPost *grep* cwindow
+
 " {{{ colorscheme
 " line color for Iceberg
 autocmd MyAutoCmd ColorScheme * highlight LineNr ctermfg=242
@@ -181,6 +190,7 @@ autocmd MyAutoCmd ColorScheme * highlight LineNr ctermbg=234
 
 " background color for Iceberg
 autocmd MyAutoCmd ColorScheme * highlight Normal ctermbg=none
+autocmd MyAutoCmd ColorScheme * highlight EndOfBuffer ctermfg=0
 autocmd MyAutoCmd ColorScheme * highlight EndOfBuffer ctermbg=none
 
 " Constant for Iceberg
@@ -198,7 +208,7 @@ autocmd MyAutoCmd ColorScheme * highlight Error ctermbg=none
 
 " colorscheme
 colorscheme iceberg
-hi clear CursorLine
+highlight clear CursorLine
 " }}} end colorscheme
 
 " 選択位置のSyntax情報を表示
