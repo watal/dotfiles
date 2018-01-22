@@ -133,8 +133,11 @@ nnoremap <ESC><ESC> :nohlsearch<CR>
 
 " 操作系
 " リーダーの設定
-let mapleader = "\<Space>"
+let mapleader = ","
+let maplocalleader = "\<Space>"
+
 " キーマップ
+nnoremap , \
 nnoremap ; :
 nnoremap : ;
 nnoremap j gj
@@ -144,18 +147,41 @@ nnoremap gk k
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
 nnoremap Q <Nop>
-noremap <Leader>h  ^
-noremap <Leader>l  $
-nnoremap <Leader>w  :<C-u>w<CR>
-nnoremap <Leader>q  :<C-u>q<CR>
-nnoremap <Leader>Q  :<C-u>q!<CR>
+noremap <LocalLeader>h  ^
+noremap <LocalLeader>l  $
+nnoremap <LocalLeader>w  :<C-u>w<CR>
+nnoremap <LocalLeader>q  :<C-u>q<CR>
+nnoremap <LocalLeader>Q  :<C-u>q!<CR>
 " 貼り付けたテキストの末尾へ自動的に移動する
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
-
+" 画面分割関係
+nnoremap s <Nop>
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
+nnoremap sn gt
+nnoremap sp gT
+nnoremap sr <C-w>r
+nnoremap s= <C-w>=
+nnoremap sw <C-w>w
+nnoremap so <C-w>_<C-w>|
+nnoremap sO <C-w>=
+nnoremap sN :<C-u>bn<CR>
+nnoremap sP :<C-u>bp<CR>
+nnoremap st :<C-u>tabnew<CR>
+nnoremap ss :<C-u>sp<CR>
+nnoremap sv :<C-u>vs<CR>
+nnoremap sq :<C-u>q<CR>
+nnoremap sQ :<C-u>bd<CR>
 " jjでインサートモードを抜ける
-inoremap <silent> jj <ESC>
+"inoremap <silent> jj <ESC>
 " バックスペースキーで行頭を削除する
 set backspace=indent,eol,start
 " マウスホイールの有効化

@@ -1,5 +1,13 @@
-[[plugins]]
+[[plugins]] # dein
 repo = 'Shougo/dein.vim'
+
+[[plugins]] # Unite
+repo = 'Shougo/Unite.vim'
+hook_add = '''
+nnoremap sT :<C-u>Unite tab<CR>
+nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
+nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
+'''
 
 [[plugins]] # powerline
 repo = 'itchyny/lightline.vim'
@@ -9,3 +17,16 @@ hook_add = '''
 
 [[plugins]] # iceberg
 repo = 'cocopon/iceberg.vim'
+
+[[plugins]] # submode
+repo = 'kana/vim-submode'
+hook_add = '''
+call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
+call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
+call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+call submode#map('bufmove', 'n', '', '<', '<C-w><')
+call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+call submode#map('bufmove', 'n', '', '-', '<C-w>-')
+'''
