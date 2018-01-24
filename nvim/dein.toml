@@ -12,7 +12,17 @@ nnoremap sB :<C-u>Denite buffer -buffer-name=file<CR>
 [[plugins]] # powerline
 repo = 'itchyny/lightline.vim'
 hook_add = '''
-    let g:lightline = {'colorscheme': 'wombat'}
+    let g:lightline = {
+        \ 'colorscheme': 'wombat',
+        \ 'separator': {
+        \     'left': "\ue0b0",
+        \     'right': "\ue0b2"
+        \ },
+        \ 'subseparator': {
+        \     'left': "\ue0b1",
+        \     'right': "\ue0b3"
+        \}
+    \}
 '''
 
 [[plugins]] # iceberg
