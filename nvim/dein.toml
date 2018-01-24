@@ -14,15 +14,12 @@ repo = 'itchyny/lightline.vim'
 hook_add = '''
     let g:lightline = {
         \ 'colorscheme': 'wombat',
-        \ 'separator': {
-        \     'left': "\ue0b0",
-        \     'right': "\ue0b2"
+        \ 'component': {
+        \   'readonly': '%{&readonly?"x":""}',
         \ },
-        \ 'subseparator': {
-        \     'left': "\ue0b1",
-        \     'right': "\ue0b3"
-        \}
-    \}
+"        \ 'separator': { 'left': "\ue0b0", 'right': "\ue02" },
+"        \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+        \ }
 '''
 
 [[plugins]] # iceberg

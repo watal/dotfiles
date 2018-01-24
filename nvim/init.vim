@@ -200,12 +200,12 @@ endfunction
 autocmd MyAutoCmd BufWritePre * call <SID>remove_dust()
 
 " Readonlyファイルの反転表示
-function UpdateColorScheme()
-    if &readonly && &buftype ==# ""
-        colorscheme morning
-    endif
-endfunction
-autocmd MyAutoCmd BufReadPost,BufEnter * call UpdateColorScheme()
+"function UpdateColorScheme()
+"    if &readonly && &buftype ==# ""
+"        colorscheme morning
+"    endif
+"endfunction
+"autocmd MyAutoCmd BufReadPost,BufEnter * call UpdateColorScheme()
 
 autocmd MyAutoCmd QuickFixCmdPost *grep* cwindow
 
