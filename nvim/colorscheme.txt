@@ -1,0 +1,21 @@
+" line color for Iceberg
+autocmd MyAutoCmd ColorScheme * highlight LineNr ctermfg=242
+autocmd MyAutoCmd ColorScheme * highlight LineNr ctermbg=234
+
+" background color for Iceberg
+autocmd MyAutoCmd ColorScheme * highlight Normal ctermbg=none
+autocmd MyAutoCmd ColorScheme * highlight EndOfBuffer ctermfg=0
+autocmd MyAutoCmd ColorScheme * highlight EndOfBuffer ctermbg=none
+
+" Constant for Iceberg
+autocmd MyAutoCmd ColorScheme * highlight Constant ctermfg=179
+
+" Function for Iceberg
+autocmd MyAutoCmd ColorScheme * highlight Function ctermfg=180
+
+" SpecialKey for Iceberg
+autocmd MyAutoCmd ColorScheme * highlight SpecialKey ctermfg=110
+autocmd MyAutoCmd ColorScheme * highlight Specialkey ctermbg=none
+
+" Error for Iceberg
+autocmd MyAutoCmd ColorScheme * highlight Error ctermbg=none

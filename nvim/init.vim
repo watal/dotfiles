@@ -99,8 +99,7 @@ set cmdheight=1
 set cursorline
 "ターミナルで256色表示を使う
 set t_Co=256
-"Unicodeで行末が変になる問題を解決
-set ambiwidth=double
+set termguicolors
 " テキスト挿入中の自動折り返しを日本語に対応させる
 set formatoptions+=mM
 
@@ -210,27 +209,17 @@ autocmd MyAutoCmd BufWritePre * call <SID>remove_dust()
 autocmd MyAutoCmd QuickFixCmdPost *grep* cwindow
 
 " {{{ colorscheme
-" line color for Iceberg
-autocmd MyAutoCmd ColorScheme * highlight LineNr ctermfg=242
-autocmd MyAutoCmd ColorScheme * highlight LineNr ctermbg=234
-
-" background color for Iceberg
-autocmd MyAutoCmd ColorScheme * highlight Normal ctermbg=none
-autocmd MyAutoCmd ColorScheme * highlight EndOfBuffer ctermfg=0
-autocmd MyAutoCmd ColorScheme * highlight EndOfBuffer ctermbg=none
-
-" Constant for Iceberg
-autocmd MyAutoCmd ColorScheme * highlight Constant ctermfg=179
-
-" Function for Iceberg
-autocmd MyAutoCmd ColorScheme * highlight Function ctermfg=180
-
-" SpecialKey for Iceberg
-autocmd MyAutoCmd ColorScheme * highlight SpecialKey ctermfg=110
-autocmd MyAutoCmd ColorScheme * highlight Specialkey ctermbg=none
-
-" Error for Iceberg
-autocmd MyAutoCmd ColorScheme * highlight Error ctermbg=none
+autocmd MyAutoCmd ColorScheme * highlight CursorLineNr guifg=#666d93
+autocmd MyAutoCmd ColorScheme * highlight SpecialKey guifg=#84a0c6
+" replace #b4be82 to 94ce94
+autocmd MyAutoCmd ColorScheme * highlight MoreMsg guifg=#99c684
+autocmd MyAutoCmd ColorScheme * highlight PreProc guifg=#99c684
+autocmd MyAutoCmd ColorScheme * highlight Question guifg=#99c684
+autocmd MyAutoCmd ColorScheme * highlight Special guifg=#99c684
+autocmd MyAutoCmd ColorScheme * highlight diffAdded guifg=#99c684
+autocmd MyAutoCmd ColorScheme * highlight EasyMotionTarget guifg=#99c684
+autocmd MyAutoCmd ColorScheme * highlight GitGutterAdd guifg=#99c684
+let g:terminal_color_2 = '#99c684'
 
 " colorscheme
 colorscheme iceberg
