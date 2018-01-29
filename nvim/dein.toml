@@ -4,16 +4,15 @@ repo = 'Shougo/dein.vim'
 [[plugins]] # Denite
 repo = 'Shougo/denite.nvim'
 hook_add = '''
-nnoremap sT :<C-u>Denite tab<CR>
-nnoremap sb :<C-u>Denite buffer_tab -buffer-name=file<CR>
-nnoremap sB :<C-u>Denite buffer -buffer-name=file<CR>
+    nnoremap sT :<C-u>Denite tab<CR>
+    nnoremap sb :<C-u>Denite buffer_tab -buffer-name=file<CR>
+    nnoremap sB :<C-u>Denite buffer -buffer-name=file<CR>
 '''
 
-[[plugins]] # powerline
+[[plugins]] # lightline
 repo = 'itchyny/lightline.vim'
 hook_add = '''
     let g:lightline = {
-        \ 'colorscheme': 'wombat',
         \ 'component': {
         \   'readonly': '%{&readonly?"x":""}',
         \ },
@@ -24,16 +23,21 @@ hook_add = '''
 
 [[plugins]] # iceberg
 repo = 'cocopon/iceberg.vim'
+hook_add = '''
+    let g:lightline = {
+        \ 'colorscheme' : 'iceberg'
+    \ }
+'''
 
 [[plugins]] # submode
 repo = 'kana/vim-submode'
 hook_add = '''
-call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
-call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
-call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
-call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
-call submode#map('bufmove', 'n', '', '>', '<C-w>>')
-call submode#map('bufmove', 'n', '', '<', '<C-w><')
-call submode#map('bufmove', 'n', '', '+', '<C-w>+')
-call submode#map('bufmove', 'n', '', '-', '<C-w>-')
+    call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
+    call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
+    call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+    call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+    call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+    call submode#map('bufmove', 'n', '', '<', '<C-w><')
+    call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+    call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 '''

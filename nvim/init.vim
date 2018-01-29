@@ -209,8 +209,12 @@ autocmd MyAutoCmd BufWritePre * call <SID>remove_dust()
 autocmd MyAutoCmd QuickFixCmdPost *grep* cwindow
 
 " {{{ colorscheme
-autocmd MyAutoCmd ColorScheme * highlight CursorLineNr guifg=#666d93
+autocmd MyAutoCmd ColorScheme * highlight Normal guibg=none
+autocmd MyAutoCmd ColorScheme * highlight EndOfBuffer guifg=#161821
+autocmd MyAutoCmd ColorScheme * highlight EndOfBuffer guibg=none
+autocmd MyAutoCmd ColorScheme * highlight CursorLineNr guifg=#777ea4
 autocmd MyAutoCmd ColorScheme * highlight SpecialKey guifg=#84a0c6
+autocmd MyAutoCmd ColorScheme * highlight SpecialKey guibg=none
 " replace #b4be82 to 94ce94
 autocmd MyAutoCmd ColorScheme * highlight MoreMsg guifg=#99c684
 autocmd MyAutoCmd ColorScheme * highlight PreProc guifg=#99c684
@@ -227,40 +231,40 @@ highlight clear CursorLine
 " }}} end colorscheme
 
 " 選択位置のSyntax情報を表示
-"function! s:get_syn_id(transparent)
-"  let synid = synID(line("."), col("."), 1)
-"  if a:transparent
-"    return synIDtrans(synid)
-"  else
-"    return synid
-"  endif
-"endfunction
-"function! s:get_syn_attr(synid)
-"  let name = synIDattr(a:synid, "name")
-"  let ctermfg = synIDattr(a:synid, "fg", "cterm")
-"  let ctermbg = synIDattr(a:synid, "bg", "cterm")
-"  let guifg = synIDattr(a:synid, "fg", "gui")
-"  let guibg = synIDattr(a:synid, "bg", "gui")
-"  return {
-"        \ "name": name,
-"        \ "ctermfg": ctermfg,
-"        \ "ctermbg": ctermbg,
-"        \ "guifg": guifg,
-"        \ "guibg": guibg}
-"endfunction
-"function! s:get_syn_info()
-"  let baseSyn = s:get_syn_attr(s:get_syn_id(0))
-"  echo "name: " . baseSyn.name .
-"        \ " ctermfg: " . baseSyn.ctermfg .
-"        \ " ctermbg: " . baseSyn.ctermbg .
-"        \ " guifg: " . baseSyn.guifg .
-"        \ " guibg: " . baseSyn.guibg
-"  let linkedSyn = s:get_syn_attr(s:get_syn_id(1))
-"  echo "link to"
-"  echo "name: " . linkedSyn.name .
-"        \ " ctermfg: " . linkedSyn.ctermfg .
-"        \ " ctermbg: " . linkedSyn.ctermbg .
-"        \ " guifg: " . linkedSyn.guifg .
-"        \ " guibg: " . linkedSyn.guibg
-"endfunction
-"command! SyntaxInfo call s:get_syn_info()
+" function! s:get_syn_id(transparent)
+"   let synid = synID(line("."), col("."), 1)
+"   if a:transparent
+"     return synIDtrans(synid)
+"   else
+"     return synid
+"   endif
+" endfunction
+" function! s:get_syn_attr(synid)
+"   let name = synIDattr(a:synid, "name")
+"   let ctermfg = synIDattr(a:synid, "fg", "cterm")
+"   let ctermbg = synIDattr(a:synid, "bg", "cterm")
+"   let guifg = synIDattr(a:synid, "fg", "gui")
+"   let guibg = synIDattr(a:synid, "bg", "gui")
+"   return {
+"         \ "name": name,
+"         \ "ctermfg": ctermfg,
+"         \ "ctermbg": ctermbg,
+"         \ "guifg": guifg,
+"         \ "guibg": guibg}
+" endfunction
+" function! s:get_syn_info()
+"   let baseSyn = s:get_syn_attr(s:get_syn_id(0))
+"   echo "name: " . baseSyn.name .
+"         \ " ctermfg: " . baseSyn.ctermfg .
+"         \ " ctermbg: " . baseSyn.ctermbg .
+"         \ " guifg: " . baseSyn.guifg .
+"         \ " guibg: " . baseSyn.guibg
+"   let linkedSyn = s:get_syn_attr(s:get_syn_id(1))
+"   echo "link to"
+"   echo "name: " . linkedSyn.name .
+"         \ " ctermfg: " . linkedSyn.ctermfg .
+"         \ " ctermbg: " . linkedSyn.ctermbg .
+"         \ " guifg: " . linkedSyn.guifg .
+"         \ " guibg: " . linkedSyn.guibg
+" endfunction
+" command! SyntaxInfo call s:get_syn_info()

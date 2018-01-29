@@ -22,6 +22,10 @@ on_ft = 'javascript'
 repo = 'maxmellon/vim-jsx-pretty'
 on_ft = 'javascript'
 
+[[plugins]] #gnuplot
+repo = 'vim-scripts/gnuplot.vim'
+on_ft = 'gp'
+
 [[plugins]] #latex
 repo = 'vim-latex/vim-latex'
 hook_source = '''
