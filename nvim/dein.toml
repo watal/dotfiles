@@ -37,3 +37,14 @@ hook_add = '''
     call submode#map('bufmove', 'n', '', '+', '<C-w>+')
     call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 '''
+
+[[plugins]] #quickrun
+repo = 'thinca/vim-quickrun'
+hook_add = '''
+    let g:quickrun_config = {
+    \   'tex': {
+    \       'command': 'latexmk',
+    \       'exec': ['%c -gg -pdfdvi %s', 'open %s:r.pdf']
+    \   },
+    \}
+'''

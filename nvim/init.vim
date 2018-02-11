@@ -132,8 +132,8 @@ nnoremap <ESC><ESC> :nohlsearch<CR>
 
 " 操作系
 " リーダーの設定
-let mapleader = ","
-let maplocalleader = "\<Space>"
+let mapleader = "\<Space>"
+let maplocalleader = ","
 
 " キーマップ
 nnoremap , \
@@ -146,11 +146,11 @@ nnoremap gk k
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
 nnoremap Q <Nop>
-noremap <LocalLeader>h  ^
-noremap <LocalLeader>l  $
-nnoremap <LocalLeader>w  :<C-u>w<CR>
-nnoremap <LocalLeader>q  :<C-u>q<CR>
-nnoremap <LocalLeader>Q  :<C-u>q!<CR>
+noremap <Leader>h  ^
+noremap <Leader>l  $
+nnoremap <Leader>w  :<C-u>w<CR>
+nnoremap <Leader>q  :<C-u>q<CR>
+nnoremap <Leader>Q  :<C-u>q!<CR>
 " 貼り付けたテキストの末尾へ自動的に移動する
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
