@@ -34,10 +34,10 @@ set -g __color_path_basename         $grey[1] $fg[2]
 set -g __color_path_nowrite          $green[1] $fg[1]
 set -g __color_path_nowrite_basename $green[1] $fg[1]
 
-set -g __color_repo                  $bg[1] $fg[2]
-set -g __color_repo_work_tree        $grey[1] $fg[2]
+set -g __color_repo                  $blue[1] $fg[1]
+set -g __color_repo_work_tree        $blue[1] $fg[1]
 set -g __color_repo_dirty            $red[1] $fg[1]
-set -g __color_repo_staged           $blue[1] $fg[1]
+set -g __color_repo_staged           $green[1] $fg[1]
 
 #------
 set -g __color_vi_mode_default       $bg[1] $fg[2]
