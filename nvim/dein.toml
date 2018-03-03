@@ -17,12 +17,29 @@ repo = 'cocopon/iceberg.vim'
 hook_add = '''
     let g:lightline = {
         \ 'colorscheme' : 'iceberg',
+        \ 'active': {
+            \ 'left': [ ['mode', 'paste'], ['readonly', 'filepath', 'modified'] ]
+        \ },
         \ 'component': {
         \   'readonly': '%{&readonly?"x":""}',
+        \ },
+        \ 'component_function':{
+            \ 'filepath': 'FilePath'
         \ },
         \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
         \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
     \ }
+
+    function! FilePath()
+        if winwidth(0) > 90
+            return expand("%:s")
+        else
+            return expand("%:t")
+        endif
+    endfunction
+
+    " hide --INSERT--
+    set noshowmode
 '''
 
 [[plugins]] # submode

@@ -31,8 +31,8 @@ set -g __color_initial_segment_jobs  $blue[2] $fg[1]
 
 set -g __color_path                  $grey[1] $fg[2]
 set -g __color_path_basename         $grey[1] $fg[2]
-set -g __color_path_nowrite          $green[1] $fg[1]
-set -g __color_path_nowrite_basename $green[1] $fg[1]
+set -g __color_path_nowrite          $yellow[1] $fg[1]
+set -g __color_path_nowrite_basename $yellow[1] $fg[1]
 
 set -g __color_repo                  $blue[1] $fg[1]
 set -g __color_repo_work_tree        $blue[1] $fg[1]
