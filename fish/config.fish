@@ -25,9 +25,9 @@ set -x PATH /Library/TeX/texbin $PATH
       set -l bg         818596 34394e
 set -g theme_color_scheme user
 
-set -g __color_initial_segment_exit  $blue[1] $fg[1]
-set -g __color_initial_segment_su    $blue[1] $fg[1]
-set -g __color_initial_segment_jobs  $blue[1] $fg[1]
+set -g __color_initial_segment_exit  $blue[2] $fg[1]
+set -g __color_initial_segment_su    $blue[2] $fg[1]
+set -g __color_initial_segment_jobs  $blue[2] $fg[1]
 
 set -g __color_path                  $grey[1] $fg[2]
 set -g __color_path_basename         $grey[1] $fg[2]
@@ -36,7 +36,7 @@ set -g __color_path_nowrite_basename $green[1] $fg[1]
 
 set -g __color_repo                  $blue[1] $fg[1]
 set -g __color_repo_work_tree        $blue[1] $fg[1]
-set -g __color_repo_dirty            $red[1] $fg[1]
+set -g __color_repo_dirty            $yellow[1] $fg[1]
 set -g __color_repo_staged           $green[1] $fg[1]
 
 #------
@@ -48,6 +48,6 @@ set -g __color_vi_mode_visual        $green[1] $fg[1]
 set -g __color_vagrant               $blue[2] $fg[1]
 set -g __color_username              $bg[1] $fg[1]
 set -g __color_hostname              $bg[1] $fg[1]
-set -g __color_rvm                   $yellow[1] $fg[1]
+set -g __color_rvm                   $red[2] $fg[1]
 set -g __color_virtualfish           $blue[2] $fg[1]
 set -g __color_virtualgo             $blue[2] $fg[1]
