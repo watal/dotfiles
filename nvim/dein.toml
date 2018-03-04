@@ -1,7 +1,7 @@
 [[plugins]] # dein
 repo = 'Shougo/dein.vim'
 
-[[plugins]] # Denite
+[[plugins]] # denite
 repo = 'Shougo/denite.nvim'
 hook_add = '''
     nnoremap sT :<C-u>Denite tab<CR>
@@ -9,40 +9,91 @@ hook_add = '''
     nnoremap sB :<C-u>Denite buffer -buffer-name=file<CR>
 '''
 
-[[plugins]] # lightline
-repo = 'itchyny/lightline.vim'
+[[plugins]] # icons
+repo = 'ryanoasis/vim-devicons'
+hook_add = '''
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+'''
+
+[[plugins]] # nerdtree
+repo = 'scrooloose/nerdtree'
+[[plugins]]
+repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+hook_add = '''
+    let g:NERDTreeLimitedSyntax = 1
+'''
+
+[[plugins]] # fugitive
+repo = 'tpope/vim-fugitive'
 
 [[plugins]] # iceberg
 repo = 'cocopon/iceberg.vim'
+
+[[plugins]] # lightline
+repo = 'itchyny/lightline.vim'
 hook_add = '''
     let g:lightline = {
-        \ 'colorscheme' : 'iceberg',
-        \ 'active': {
-            \ 'left': [ ['mode', 'paste'], ['readonly', 'filepath', 'modified'] ]
-        \ },
-        \ 'component': {
-        \   'readonly': '%{&readonly?"x":""}',
-        \ },
-        \ 'component_function':{
-            \ 'filepath': 'FilePath'
-        \ },
-        \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-        \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+    \    'colorscheme' : 'iceberg',
+    \    'active': {
+    \       'left': [ ['mode', 'paste'], ['fugitive', 'readonly', 'filename', 'modified'] ]
+    \    },
+    \    'component_function':{
+    \      'fugitive': 'LightLineFugitive',
+    \      'readonly': 'LightLineReadonly',
+    \      'modified': 'LightLineModified',
+    \      'filename': 'LightLineFilename',
+    \      'filetype': 'LightLineFiletype',
+    \      'fileformat': 'LightLineFileformat',
+    \    },
+    \    'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+    \    'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
     \ }
 
-    function! FilePath()
-        if winwidth(0) > 90
-            return expand("%:s")
+    function! LightLineModified()
+        if &filetype == "help"
+            return ""
+        elseif &modified
+            return "+"
+        elseif &modifiable
+            return ""
         else
-            return expand("%:t")
+            return ""
         endif
+    endfunction
+
+    function! LightLineReadonly()
+        if &filetype == "help"
+            return ""
+        elseif &readonly
+            return "\uf023"
+        else
+            return ""
+        endif
+    endfunction
+
+    function! LightLineFugitive()
+        if exists("*fugitive#head")
+            let _ = fugitive#head()
+            return strlen(_) ? "\ue725 "._ : ''
+        endif
+        return ''
+    endfunction
+
+    function! LightLineFilename()
+        return ('' != expand('%:p') ? winwidth(0) > 90 ? expand('%:p') : expand('%:t') : '[No Name]')
+    endfunction
+
+    function! LightLineFiletype()
+      return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+    endfunction
+
+    function! LightLineFileformat()
+      return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
     endfunction
 
     " hide --INSERT--
     set noshowmode
 '''
-[[plugins]] # nerdtree
-repo = 'scrooloose/nerdtree'
 
 [[plugins]] # submode
 repo = 'kana/vim-submode'
