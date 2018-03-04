@@ -41,6 +41,8 @@ hook_add = '''
     " hide --INSERT--
     set noshowmode
 '''
+[[plugins]] # nerdtree
+repo = 'scrooloose/nerdtree'
 
 [[plugins]] # submode
 repo = 'kana/vim-submode'
