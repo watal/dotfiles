@@ -179,6 +179,9 @@ nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
+" NERDTree
+nnoremap <Leader>n  :NERDTree<CR>
+
 " jjでインサートモードを抜ける
 "inoremap <silent> jj <ESC>
 " バックスペースキーで行頭を削除する
