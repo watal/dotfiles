@@ -118,3 +118,9 @@ hook_add = '''
     \   },
     \}
 '''
+
+[[plugins]] #highlight in toml
+repo = 'inkarkat/vim-ingo-library'
+[[plugins]]
+repo = 'inkarkat/vim-SyntaxRange'
+depends = 'vim-ingo-library'

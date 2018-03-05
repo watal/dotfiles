@@ -42,7 +42,7 @@ endif
 
 " path
 let g:python_host_prog=$PYENV_ROOT.'/versions/2.7.14/bin/python'
-let g:python3_host_prog=$PYENV_ROOT.'/versions/neovim-3/bin/python'
+let g:python3_host_prog=$PYENV_ROOT.'/versions/3.6.4/bin/python'
 let g:ruby_host_prog=$RBENV_ROOT.'/versions/2.5.0/bin/neovim-ruby-host'
 " }}} end dein
 
@@ -182,8 +182,9 @@ nnoremap sQ :<C-u>bd<CR>
 " NERDTree
 nnoremap <Leader>n  :NERDTree<CR>
 
-" jjでインサートモードを抜ける
-"inoremap <silent> jj <ESC>
+if has('terminal') || has('nvim')
+    tnoremap <silent> <ESC> <C-\><C-n>
+endif
 " バックスペースキーで行頭を削除する
 set backspace=indent,eol,start
 " マウスホイールの有効化
@@ -201,15 +202,18 @@ function! s:remove_dust()
 endfunction
 autocmd MyAutoCmd BufWritePre * call <SID>remove_dust()
 
-" Readonlyファイルの反転表示
-"function UpdateColorScheme()
-"    if &readonly && &buftype ==# ""
-"        colorscheme morning
-"    endif
-"endfunction
-"autocmd MyAutoCmd BufReadPost,BufEnter * call UpdateColorScheme()
-
 autocmd MyAutoCmd QuickFixCmdPost *grep* cwindow
+
+" function for SyntaxRange
+autocmd MyAutoCmd BufNewFile,BufRead dein*.toml call s:syntax_range_dein()
+function! s:syntax_range_dein() abort
+    let start = '^\s*hook_\%('.
+    \           'add\|source\|post_source\|post_update'.
+    \           '\)\s*=\s*%s'
+
+    call SyntaxRange#Include(printf(start, "'''"), "'''", 'vim', '')
+    call SyntaxRange#Include(printf(start, '"""'), '"""', 'vim', '')
+endfunction
 
 " {{{ colorscheme
 autocmd MyAutoCmd ColorScheme * highlight Normal guibg=none
@@ -231,6 +235,7 @@ let g:terminal_color_2 = '#99c684'
 " colorscheme
 colorscheme iceberg
 highlight clear CursorLine
+
 " }}} end colorscheme
 
 " 選択位置のSyntax情報を表示
