@@ -98,3 +98,21 @@ function luaenv
     command luaenv "$command" $argv
   end
 end
+
+# phpenv
+set -x PHPENV_ROOT "/usr/local/Cellar/anyenv/3cb8ad1/envs/phpenv"
+set -x PATH $PATH "/usr/local/Cellar/anyenv/3cb8ad1/envs/phpenv/bin"
+set -gx PATH '/usr/local/Cellar/anyenv/3cb8ad1/envs/phpenv/shims' $PATH
+set -gx PHPENV_SHELL fish
+phpenv rehash 2>/dev/null
+function phpenv
+  set command $argv[1]
+  set -e argv[1]
+
+  switch "$command"
+  case rehash shell
+    eval (phpenv "sh-$command" $argv)
+  case '*'
+    command phpenv "$command" $argv
+  end
+end
