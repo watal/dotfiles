@@ -53,7 +53,7 @@ hook_add = '''
         if &filetype == "help"
             return ""
         elseif &modified
-            return "+"
+            return "\uf040"
         elseif &modifiable
             return ""
         else
