@@ -9,6 +9,9 @@ hook_add = '''
     nnoremap sB :<C-u>Denite buffer -buffer-name=file<CR>
 '''
 
+[[plugins]] # deoplete
+repo = 'Shougo/deoplete.nvim'
+
 [[plugins]] # icons
 repo = 'ryanoasis/vim-devicons'
 hook_add = '''
@@ -21,13 +24,23 @@ repo = 'scrooloose/nerdtree'
 repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
 hook_add = '''
     let g:NERDTreeLimitedSyntax = 1
+    nnoremap <silent><Leader>n  :NERDTree<CR>
 '''
 
 [[plugins]] # fugitive
 repo = 'tpope/vim-fugitive'
 
+[[plugins]] # gitgutter
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+    let g:gitgutter_enabled = 0
+'''
+
 [[plugins]] # iceberg
 repo = 'cocopon/iceberg.vim'
+
+[[plugins]] # ALE
+repo = 'w0rp/ale'
 
 [[plugins]] # lightline
 repo = 'itchyny/lightline.vim'

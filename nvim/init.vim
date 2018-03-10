@@ -179,8 +179,8 @@ nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
-" NERDTree
-nnoremap <Leader>n  :NERDTree<CR>
+" GitGutter
+nnoremap <silent><Leader>g  :GitGutterToggle<CR>
 
 if has('terminal') || has('nvim')
     tnoremap <silent> <ESC> <C-\><C-n>
