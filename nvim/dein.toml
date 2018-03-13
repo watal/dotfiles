@@ -24,7 +24,6 @@ repo = 'scrooloose/nerdtree'
 repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
 hook_add = '''
     let g:NERDTreeLimitedSyntax = 1
-    nnoremap <silent><Leader>n  :NERDTree<CR>
 '''
 
 [[plugins]] # fugitive
@@ -41,6 +40,24 @@ repo = 'cocopon/iceberg.vim'
 
 [[plugins]] # ALE
 repo = 'w0rp/ale'
+hook_add = '''
+    let g:ale_set_loclist = 0
+    let g:ale_set_quickfix = 1
+    let g:ale_sign_column_always = 1
+    let g:ale_sign_error = "\uf057"
+    let g:ale_sign_warning = "\uf06a"
+    let g:ale_statusline_format = ["\uf057 %d", "\uf06a %d", "\uf058 OK"]
+    let g:ale_echo_msg_error_str = 'E'
+    let g:ale_echo_msg_warning_str = 'W'
+    let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+    let g:ale_open_list = 1
+    let g:ale_lint_on_save = 1
+    let g:ale_lint_on_text_changed = 0
+    let g:ale_linters= {
+    \   'c':["gcc"],
+    \   'cpp':["g++"],
+    \}
+'''
 
 [[plugins]] # lightline
 repo = 'itchyny/lightline.vim'
@@ -48,15 +65,27 @@ hook_add = '''
     let g:lightline = {
     \    'colorscheme' : 'iceberg',
     \    'active': {
-    \       'left': [ ['mode', 'paste'], ['fugitive', 'readonly', 'filename', 'modified'] ]
+    \       'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'readonly', 'filename', 'modified' ] ],
+    \       'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'fileformat', 'fileencoding', 'filetype'], [ 'linter_errors', 'linter_warnings', 'linter_ok' ]]
     \    },
     \    'component_function':{
-    \      'fugitive': 'LightLineFugitive',
-    \      'readonly': 'LightLineReadonly',
-    \      'modified': 'LightLineModified',
-    \      'filename': 'LightLineFilename',
-    \      'filetype': 'LightLineFiletype',
-    \      'fileformat': 'LightLineFileformat',
+    \       'fugitive': 'LightLineFugitive',
+    \       'readonly': 'LightLineReadonly',
+    \       'modified': 'LightLineModified',
+    \       'filename': 'LightLineFilename',
+    \       'filetype': 'LightLineFiletype',
+    \       'fileformat': 'LightLineFileformat',
+    \    },
+    \    'component_expand': {
+    \       'linter_warnings': 'LightlineLinterWarnings',
+    \       'linter_errors': 'LightlineLinterErrors',
+    \       'linter_ok': 'LightlineLinterOK'
+    \    },
+    \    'component_type': {
+    \       'readonly': 'error',
+    \       'linter_warnings': 'warning',
+    \       'linter_errors': 'error',
+    \       'linter_ok': 'success'
     \    },
     \    'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
     \    'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
@@ -102,6 +131,27 @@ hook_add = '''
 
     function! LightLineFileformat()
       return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+    endfunction
+
+    function! LightlineLinterErrors() abort
+      let l:counts = ale#statusline#Count(bufnr(''))
+      let l:all_errors = l:counts.error + l:counts.style_error
+      let l:all_non_errors = l:counts.total - l:all_errors
+      return l:all_errors == 0 ? '' : printf("\uf057 %d", all_errors)
+    endfunction
+
+    function! LightlineLinterWarnings() abort
+      let l:counts = ale#statusline#Count(bufnr(''))
+      let l:all_errors = l:counts.error + l:counts.style_error
+      let l:all_non_errors = l:counts.total - l:all_errors
+      return l:all_non_errors == 0 ? '' : printf("\uf06a %d", all_non_errors)
+    endfunction
+
+    function! LightlineLinterOK() abort
+      let l:counts = ale#statusline#Count(bufnr(''))
+      let l:all_errors = l:counts.error + l:counts.style_error
+      let l:all_non_errors = l:counts.total - l:all_errors
+      return l:counts.total == 0 ? "\uf058" : ''
     endfunction
 
     " hide --INSERT--

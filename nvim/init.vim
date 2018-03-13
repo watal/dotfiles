@@ -129,6 +129,10 @@ set wrapscan
 set hlsearch
 " ESC連打でハイライト解除
 nnoremap <ESC><ESC> :nohlsearch<CR>
+" 置換対象を表示
+if has('nvim')
+    set inccommand=nosplit
+endif
 
 " 操作系
 " リーダーの設定
@@ -179,6 +183,8 @@ nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
+" NerdTree
+nnoremap <silent><Leader>n  :NERDTree<CR>
 " GitGutter
 nnoremap <silent><Leader>g  :GitGutterToggle<CR>
 
@@ -189,6 +195,10 @@ endif
 set backspace=indent,eol,start
 " マウスホイールの有効化
 set mouse=a
+
+" Auto-close quickfix window
+autocmd MyAutoCmd WinEnter * if (winnr('$') == 1 && (getbufvar(winbufnr(0), '&buftype')) == 'quickfix') | quit | endif
+autocmd MyAutoCmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | quit | endif
 
 " 保存時に行末の空白を除去
 function! s:remove_dust()
