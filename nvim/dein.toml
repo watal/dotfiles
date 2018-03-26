@@ -46,7 +46,7 @@ hook_add = '''
     let g:ale_sign_column_always = 1
     let g:ale_sign_error = "\uf057"
     let g:ale_sign_warning = "\uf06a"
-    let g:ale_statusline_format = ["\uf057 %d", "\uf06a %d", "\uf058 OK"]
+    let g:ale_statusline_format = ["\uf057 %d", "\uf06a %d", "\uf058"]
     let g:ale_echo_msg_error_str = 'E'
     let g:ale_echo_msg_warning_str = 'W'
     let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
@@ -82,10 +82,8 @@ hook_add = '''
     \       'linter_ok': 'LightlineLinterOK'
     \    },
     \    'component_type': {
-    \       'readonly': 'error',
     \       'linter_warnings': 'warning',
     \       'linter_errors': 'error',
-    \       'linter_ok': 'success'
     \    },
     \    'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
     \    'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
