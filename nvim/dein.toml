@@ -174,8 +174,13 @@ repo = 'thinca/vim-quickrun'
 hook_add = '''
     let g:quickrun_config = {
     \   'tex': {
-    \       'command': 'latexmk',
-    \       'exec': ['%c -gg -pdfdvi %s', 'open %s:r.pdf']
+    \       'command' : 'latexmk',
+    \       'cmdopt' : '-pv',
+    \       'outputter' : 'error',
+    \       'outputter/error/success' : 'null',
+    \       'outputter/error/error' : 'quickfix',
+    \       'srcfile' : expand("%"),
+    \       'exec' : '%c %o %s'
     \   },
     \}
 '''
