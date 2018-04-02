@@ -176,11 +176,21 @@ hook_add = '''
     \   'tex': {
     \       'command' : 'latexmk',
     \       'cmdopt' : '-pv',
+    \       'exec' : '%c %o %s',
     \       'outputter' : 'error',
     \       'outputter/error/success' : 'null',
     \       'outputter/error/error' : 'quickfix',
     \       'srcfile' : expand("%"),
-    \       'exec' : '%c %o %s'
+    \       'hook/sweep/files' : [
+    \           '%S:p:r.aux',
+    \           '%S:p:r.bbl',
+    \           '%S:p:r.blg',
+    \           '%S:p:r.dvi',
+    \           '%S:p:r.fdb_latexmk',
+    \           '%S:p:r.fls',
+    \           '%S:p:r.log',
+    \           '%S:p:r.out'
+    \       ],
     \   },
     \}
 '''
