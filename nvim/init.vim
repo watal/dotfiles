@@ -143,10 +143,16 @@ let maplocalleader = ","
 nnoremap , \
 nnoremap ; :
 nnoremap : ;
+vnoremap ; :
+vnoremap : ;
 nnoremap j gj
 nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 nnoremap gj j
 nnoremap gk k
+vnoremap gj j
+vnoremap gk k
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
 nnoremap Q <Nop>

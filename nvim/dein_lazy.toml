@@ -1,3 +1,27 @@
+[[plugins]] # deoplete
+repo = 'Shougo/deoplete.nvim'
+hook_source = '''
+    let g:deoplete#enable_at_startup = 1
+    inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+        \ neosnippet#expandable_or_jumpable() ?
+        \ "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+'''
+on_i = 1
+
+[[plugins]] # neosnippet
+repo = 'Shougo/neosnippet'
+hook_source = '''
+    imap <C-k> <Plug>(neosnippet_expand_or_jump)
+    smap <C-k> <Plug>(neosnippet_expand_or_jump)
+    xmap <C-k> <Plug>(neosnippet_expand_target)
+    if has('conceal')
+        set conceallevel=2 concealcursor=niv
+    endif
+'''
+on_i = 1
+on_ft = 'snippet'
+depends = 'neosnippet-snippets'
+
 [[plugins]] # golang
 repo = 'fatih/vim-go'
 on_ft = 'go'
@@ -10,22 +34,22 @@ on_ft = ['md', 'markdown']
 repo  = 'cespare/vim-toml'
 on_ft = 'toml'
 
-[[plugins]] #slim
+[[plugins]] # slim
 repo = 'slim-template/vim-slim'
 on_ft = 'slim'
 
-[[plugins]] #javascript
+[[plugins]] # javascript
 repo = 'othree/yajs.vim'
 on_ft = 'javascript'
 
-[[plugins]] #jsx
+[[plugins]] # jsx
 repo = 'maxmellon/vim-jsx-pretty'
 on_ft = 'javascript'
 
-[[plugins]] #gnuplot
+[[plugins]] # gnuplot
 repo = 'vim-scripts/gnuplot.vim'
 on_ft = 'gp'
 
-[[plugins]]
+[[plugins]] # tex
 repo = 'lervag/vimtex'
-on_ft = 'tex'
+on_ft = ['tex', 'plaintex']

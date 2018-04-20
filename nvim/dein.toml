@@ -9,13 +9,13 @@ hook_add = '''
     nnoremap sB :<C-u>Denite buffer -buffer-name=file<CR>
 '''
 
-[[plugins]] # deoplete
-repo = 'Shougo/deoplete.nvim'
+[[plugins]] #snippet
+repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]] # icons
 repo = 'ryanoasis/vim-devicons'
 hook_add = '''
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+    let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 '''
 
 [[plugins]] # nerdtree
