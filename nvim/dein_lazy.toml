@@ -1,42 +1,114 @@
 [[plugins]] # deoplete
 repo = 'Shougo/deoplete.nvim'
+depends = 'context_filetype.vim'
+on_i = 1
 hook_source = '''
-    let g:deoplete#enable_at_startup = 1
+    call deoplete#enable()
     inoremap <expr><tab> pumvisible() ? "\<C-n>" :
         \ neosnippet#expandable_or_jumpable() ?
         \ "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
 '''
-on_i = 1
+
+[[plugins]] # denite
+repo = 'Shougo/denite.nvim'
+on_cmd = 'Denite'
+hook_source = '''
+    noremap [Denite] <Nop>
+    nmap <Leader>f [Denite]
+    nnoremap <silent> [Denite]h :<C-u>Denite file_mru<CR>
+    nnoremap <silent> [Denite]g :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
+
+    nnoremap sT :<C-u>Denite tab<CR>
+    nnoremap sb :<C-u>Denite buffer_tab -buffer-name=file<CR>
+    nnoremap sB :<C-u>Denite buffer -buffer-name=file<CR>
+'''
+hook_post_source = '''
+    call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+    call denite#custom#var('grep', 'command', ['ag'])
+    call denite#custom#var('grep', 'recursive_opts', [])
+    call denite#custom#var('grep', 'pattern_opt', [])
+    call denite#custom#var('grep', 'default_opts', ['--follow', '--no-group', '--no-color'])
+'''
 
 [[plugins]] # neosnippet
 repo = 'Shougo/neosnippet'
-hook_source = '''
-    imap <C-k> <Plug>(neosnippet_expand_or_jump)
-    smap <C-k> <Plug>(neosnippet_expand_or_jump)
-    xmap <C-k> <Plug>(neosnippet_expand_target)
-    if has('conceal')
-        set conceallevel=2 concealcursor=niv
-    endif
-'''
-on_i = 1
+depends = ['neosnippet-snippets', 'context_filetype.vim']
+on_event = 'InsertCharPre'
 on_ft = 'snippet'
-depends = 'neosnippet-snippets'
+hook_source = '''
+    imap <silent>L <Plug>(neosnippet_jump_or_expand)
+    smap <silent>L <Plug>(neosnippet_jump_or_expand)
+    xmap <silent>L <Plug>(neosnippet_expand_target)
 
-[[plugins]] # golang
+    let g:neosnippet#enable_snipmate_compatibility = 1
+    let g:neosnippet#enable_completed_snippet = 1
+    let g:neosnippet#expand_word_boundary = 1
+'''
+
+[[plugins]] # snippet
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]] # context_filetype
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]] # vimproc
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]] # browser
+repo = 'tyru/open-browser.vim'
+
+[[plugins]] # submode
+repo = 'kana/vim-submode'
+hook_post_source = '''
+    call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
+    call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
+    call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+    call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+    call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+    call submode#map('bufmove', 'n', '', '<', '<C-w><')
+    call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+    call submode#map('bufmove', 'n', '', '-', '<C-w>-')
+'''
+
+[[plugins]] # python
+repo = 'zchee/deoplete-jedi'
+on_ft = 'python'
+
+[[plugins]] # c
+repo = 'Shougo/deoplete-clangx'
+on_ft = ['c', 'cpp']
+
+[[plugins]] # go
+repo = 'zchee/deoplete-go'
+on_i = 1
+on_ft = 'go'
+
+[[plugins]] # go
 repo = 'fatih/vim-go'
 on_ft = 'go'
 
 [[plugins]] # markdown
 repo = 'rcmdnk/vim-markdown'
 on_ft = ['md', 'markdown']
-
-[[plugins]] # Toml
-repo  = 'cespare/vim-toml'
-on_ft = 'toml'
+hook_source = ''' "
+    let g:vim_markdown_folding_disabled = 1
+'''
+[[plugins]] # markdown preview
+repo = 'kannokanno/previm'
+depends = ['open-browser.vim']
+on_ft = ['md', 'markdown']
+hook_source = '''
+    let g:previm_enable_realtime = 1
+'''
 
 [[plugins]] # slim
 repo = 'slim-template/vim-slim'
 on_ft = 'slim'
+
+[[plugins]] # HTML5
+repo = 'othree/html5.vim'
+on_ft = 'html'
 
 [[plugins]] # javascript
 repo = 'othree/yajs.vim'
@@ -46,10 +118,25 @@ on_ft = 'javascript'
 repo = 'maxmellon/vim-jsx-pretty'
 on_ft = 'javascript'
 
-[[plugins]] # gnuplot
-repo = 'vim-scripts/gnuplot.vim'
-on_ft = 'gp'
-
 [[plugins]] # tex
 repo = 'lervag/vimtex'
 on_ft = ['tex', 'plaintex']
+
+[[plugins]] # Toml
+repo  = 'cespare/vim-toml'
+on_ft = 'toml'
+[[plugins]] # highlight in Toml
+repo = 'inkarkat/vim-ingo-library'
+on_ft = 'toml'
+[[plugins]]
+repo = 'inkarkat/vim-SyntaxRange'
+depends = 'vim-ingo-library'
+on_ft = 'toml'
+
+[[plugins]] # YAML
+repo = 'chase/vim-ansible-yaml'
+on_ft = ['yaml']
+
+[[plugins]] # gnuplot
+repo = 'vim-scripts/gnuplot.vim'
+on_ft = 'gp'

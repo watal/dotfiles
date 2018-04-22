@@ -231,29 +231,6 @@ function! s:syntax_range_dein() abort
     call SyntaxRange#Include(printf(start, '"""'), '"""', 'vim', '')
 endfunction
 
-" {{{ colorscheme
-autocmd MyAutoCmd ColorScheme * highlight Normal guibg=none
-autocmd MyAutoCmd ColorScheme * highlight EndOfBuffer guifg=#161821
-autocmd MyAutoCmd ColorScheme * highlight EndOfBuffer guibg=none
-autocmd MyAutoCmd ColorScheme * highlight CursorLineNr guifg=#777ea4
-autocmd MyAutoCmd ColorScheme * highlight SpecialKey guifg=#84a0c6
-autocmd MyAutoCmd ColorScheme * highlight SpecialKey guibg=none
-" replace #b4be82 to 94ce94
-autocmd MyAutoCmd ColorScheme * highlight MoreMsg guifg=#99c684
-autocmd MyAutoCmd ColorScheme * highlight PreProc guifg=#99c684
-autocmd MyAutoCmd ColorScheme * highlight Question guifg=#99c684
-autocmd MyAutoCmd ColorScheme * highlight Special guifg=#99c684
-autocmd MyAutoCmd ColorScheme * highlight diffAdded guifg=#99c684
-autocmd MyAutoCmd ColorScheme * highlight EasyMotionTarget guifg=#99c684
-autocmd MyAutoCmd ColorScheme * highlight GitGutterAdd guifg=#99c684
-let g:terminal_color_2 = '#99c684'
-
-" colorscheme
-colorscheme iceberg
-highlight clear CursorLine
-
-" }}} end colorscheme
-
 " 選択位置のSyntax情報を表示
 " function! s:get_syn_id(transparent)
 "   let synid = synID(line("."), col("."), 1)
