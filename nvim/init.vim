@@ -8,6 +8,10 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
+" Leader
+let mapleader = "\<Space>"
+let maplocalleader = ","
+
 " XDG
 let s:cache_home = empty($XDG_CACHE_HOME) ? expand('$HOME/.cache') : $XDG_CACHE_HOME
 let s:config_home = empty($XDG_CONFIG_HOME) ? expand('$HOME/.config') : $XDG_CONFIG_HOME
@@ -62,7 +66,7 @@ set noswapfile
 set autoread
 " バッファが編集中でもその他のファイルを開く
 set hidden
-" 入力中のコマンドをステータスに表示する
+" 入力中のコマンドをステータスに表示
 set showcmd
 "コマンド、検索パターンを50まで保存
 set history=50
@@ -97,10 +101,10 @@ set nolist
 set cmdheight=1
 " 選択行のハイライト
 set cursorline
-"ターミナルで256色表示を使う
+"ターミナルで256色表示を使用
 set t_Co=256
 set termguicolors
-" テキスト挿入中の自動折り返しを日本語に対応させる
+" テキスト挿入中の自動折り返しを日本語に対応
 set formatoptions+=mM
 
 " インデント系
@@ -108,20 +112,20 @@ set formatoptions+=mM
 set tabstop=4
 " 行頭でのタブ文字の表示幅
 set shiftwidth=4
-" Tab文字を半角スペースにする
+" Tab文字を半角スペースに
 set expandtab
 " 自動インデント
 set autoindent
 set smartindent
 
 " 検索系
-" 検索文字列が小文字の場合は大文字小文字を区別なく検索する
+" 検索文字列が小文字の場合は大文字小文字を区別なく検索
 set ignorecase
-" 検索文字列に大文字が含まれている場合は区別して検索する
+" 検索文字列に大文字が含まれている場合は区別して検索
 set smartcase
 " 補完の際の大文字小文字の区別しない
 set infercase
-" 検索文字列入力時に順次対象文字列にヒットさせる
+" 検索文字列入力時に順次対象文字列をハイライト
 set incsearch
 " 検索時に最後まで行ったら最初に戻る
 set wrapscan
@@ -135,10 +139,6 @@ if has('nvim')
 endif
 
 " 操作系
-" リーダーの設定
-let mapleader = "\<Space>"
-let maplocalleader = ","
-
 " キーマップ
 nnoremap , \
 nnoremap ; :
@@ -161,7 +161,7 @@ noremap <Leader>l  $
 nnoremap <Leader>w  :<C-u>w<CR>
 nnoremap <Leader>q  :<C-u>q<CR>
 nnoremap <Leader>Q  :<C-u>q!<CR>
-" 貼り付けたテキストの末尾へ自動的に移動する
+" 貼り付けたテキストの末尾へ移動
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
@@ -189,15 +189,11 @@ nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
-" NerdTree
-nnoremap <silent><Leader>n  :NERDTree<CR>
-" GitGutter
-nnoremap <silent><Leader>g  :GitGutterToggle<CR>
-
+" terminalでESCによりNormalモードへ遷移
 if has('terminal') || has('nvim')
     tnoremap <silent> <ESC> <C-\><C-n>
 endif
-" バックスペースキーで行頭を削除する
+" バックスペースキーで行頭を削除
 set backspace=indent,eol,start
 " マウスホイールの有効化
 set mouse=a
@@ -209,9 +205,9 @@ autocmd MyAutoCmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NE
 " 保存時に行末の空白を除去
 function! s:remove_dust()
     let cursor = getpos(".")
-    " 保存時に行末の空白を除去する
+    " 保存時に行末の空白を除去
     %s/\s\+$//ge
-    " 保存時にtabを4スペースに変換する
+    " 保存時にtabを4スペースに変換
     %s/\t/    /ge
     call setpos(".", cursor)
     unlet cursor

@@ -1,22 +1,15 @@
-[[plugins]] # deoplete
-repo = 'Shougo/deoplete.nvim'
-depends = 'context_filetype.vim'
-on_i = 1
-hook_source = '''
-    call deoplete#enable()
-    inoremap <expr><tab> pumvisible() ? "\<C-n>" :
-        \ neosnippet#expandable_or_jumpable() ?
-        \ "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
-'''
-
 [[plugins]] # denite
 repo = 'Shougo/denite.nvim'
+depends = 'neomru.vim'
 on_cmd = 'Denite'
-hook_source = '''
-    noremap [Denite] <Nop>
-    nmap <Leader>f [Denite]
-    nnoremap <silent> [Denite]h :<C-u>Denite file_mru<CR>
-    nnoremap <silent> [Denite]g :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
+hook_add = '''
+    nnoremap [denite] <Nop>
+    nmap <Leader>d [denite]
+    nnoremap <silent> [denite]h :<C-u>Denite file_mru<CR>
+    nnoremap <silent> [denite]g :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
+    nnoremap <silent> [denite]r :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
+    nnoremap <silent> [denite]f :<C-u>Denite file_rec<CR>
+    nnoremap <silent> [denite]l :<C-u>Denite line<CR>
 
     nnoremap sT :<C-u>Denite tab<CR>
     nnoremap sb :<C-u>Denite buffer_tab -buffer-name=file<CR>
@@ -30,15 +23,26 @@ hook_post_source = '''
     call denite#custom#var('grep', 'default_opts', ['--follow', '--no-group', '--no-color'])
 '''
 
+[[plugins]] # deoplete
+repo = 'Shougo/deoplete.nvim'
+depends = 'context_filetype.vim'
+on_i = 1
+hook_source = '''
+    call deoplete#enable()
+    inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+        \ neosnippet#expandable_or_jumpable() ?
+        \ "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+'''
+
 [[plugins]] # neosnippet
 repo = 'Shougo/neosnippet'
 depends = ['neosnippet-snippets', 'context_filetype.vim']
 on_event = 'InsertCharPre'
 on_ft = 'snippet'
 hook_source = '''
-    imap <silent>L <Plug>(neosnippet_jump_or_expand)
-    smap <silent>L <Plug>(neosnippet_jump_or_expand)
-    xmap <silent>L <Plug>(neosnippet_expand_target)
+    imap <C-k> <Plug>(neosnippet_jump_or_expand)
+    smap <C-k> <Plug>(neosnippet_jump_or_expand)
+    xmap <C-k> <Plug>(neosnippet_expand_target)
 
     let g:neosnippet#enable_snipmate_compatibility = 1
     let g:neosnippet#enable_completed_snippet = 1
@@ -47,6 +51,10 @@ hook_source = '''
 
 [[plugins]] # snippet
 repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]] # neomru
+repo = 'Shougo/neomru.vim'
+on_source = 'Denite.nvim'
 
 [[plugins]] # context_filetype
 repo = 'Shougo/context_filetype.vim'
@@ -71,15 +79,63 @@ hook_post_source = '''
     call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 '''
 
-[[plugins]] # python
+[[plugins]] # nerdtree
+repo = 'scrooloose/nerdtree'
+depends = 'vim-nerdtree-syntax-highlight'
+hook_add = '''
+    nnoremap [nerdtree] <Nop>
+    nmap     <Leader>n [nerdtree]
+    nnoremap <silent>[nerdtree] :NERDTreeFind<CR>
+'''
+
+[[plugins]] # nerdtree highlight
+repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+hook_add = '''
+    nnoremap [gitgutter] <Nop>
+    nmap     <Leader>g [gitgutter]
+    nnoremap <silent>[gitgutter] :GitGutterToggle<CR>
+    let g:NERDTreeLimitedSyntax = 1
+'''
+
+[[plugins]] # fugitive
+repo = 'tpope/vim-fugitive'
+
+[[plugins]] # gitgutter
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+    let g:gitgutter_enabled = 0
+'''
+
+[[plugins]] # ALE
+repo = 'w0rp/ale'
+hook_add = '''
+    let g:ale_set_loclist = 0
+    let g:ale_set_quickfix = 1
+    let g:ale_sign_column_always = 1
+    let g:ale_sign_error = "\uf057"
+    let g:ale_sign_warning = "\uf06a"
+    let g:ale_statusline_format = ["\uf057 %d", "\uf06a %d", "\uf058"]
+    let g:ale_echo_msg_error_str = 'E'
+    let g:ale_echo_msg_warning_str = 'W'
+    let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+    let g:ale_open_list = 1
+    let g:ale_lint_on_save = 1
+    let g:ale_lint_on_text_changed = 0
+    let g:ale_linters= {
+    \   'c':["gcc"],
+    \   'cpp':["g++"],
+    \}
+'''
+
+[[plugins]] # python snippet
 repo = 'zchee/deoplete-jedi'
 on_ft = 'python'
 
-[[plugins]] # c
+[[plugins]] # c snippet
 repo = 'Shougo/deoplete-clangx'
 on_ft = ['c', 'cpp']
 
-[[plugins]] # go
+[[plugins]] # go snippet
 repo = 'zchee/deoplete-go'
 on_i = 1
 on_ft = 'go'
