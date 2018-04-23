@@ -216,17 +216,6 @@ autocmd MyAutoCmd BufWritePre * call <SID>remove_dust()
 
 autocmd MyAutoCmd QuickFixCmdPost *grep* cwindow
 
-" function for SyntaxRange
-autocmd MyAutoCmd BufNewFile,BufRead dein*.toml call s:syntax_range_dein()
-function! s:syntax_range_dein() abort
-    let start = '^\s*hook_\%('.
-    \           'add\|source\|post_source\|post_update'.
-    \           '\)\s*=\s*%s'
-
-    call SyntaxRange#Include(printf(start, "'''"), "'''", 'vim', '')
-    call SyntaxRange#Include(printf(start, '"""'), '"""', 'vim', '')
-endfunction
-
 " 選択位置のSyntax情報を表示
 " function! s:get_syn_id(transparent)
 "   let synid = synID(line("."), col("."), 1)

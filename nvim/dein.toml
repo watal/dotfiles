@@ -22,23 +22,24 @@ hook_add = '''
 
     autocmd MyAutoCmd VimEnter * nested colorscheme iceberg
     autocmd MyAutoCmd VimEnter * nested highlight clear CursorLine
-
 '''
 
 [[plugins]] # icons
 repo = 'ryanoasis/vim-devicons'
+depends = 'nerdtree'
 hook_add = '''
     let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 '''
 
 [[plugins]] # lightline
 repo = 'itchyny/lightline.vim'
+depends = ['vim-devicons', 'vim-fugitive', 'ale']
 hook_add = '''
     let g:lightline = {
     \    'colorscheme' : 'iceberg',
     \    'active': {
-    \       'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'readonly', 'filename', 'modified' ] ],
-    \       'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'fileformat', 'fileencoding', 'filetype'], [ 'linter_errors', 'linter_warnings', 'linter_ok' ]]
+    \       'left': [[ 'mode', 'paste' ], [ 'fugitive', 'readonly', 'filename', 'modified' ]],
+    \       'right': [[ 'lineinfo' ], [ 'percent' ], [ 'fileformat', 'fileencoding', 'filetype'], [ 'linter_errors', 'linter_warnings', 'linter_ok' ]]
     \    },
     \    'component_function':{
     \       'fugitive': 'LightLineFugitive',
@@ -62,33 +63,34 @@ hook_add = '''
     \ }
 
     function! LightLineModified()
-        if &filetype == "help"
-            return ""
+        if &filetype == 'help'
+            return ''
         elseif &modified
             return "\uf040"
         elseif &modifiable
-            return ""
+            return ''
         else
-            return ""
+            return ''
         endif
     endfunction
 
     function! LightLineReadonly()
-        if &filetype == "help"
-            return ""
+        if &filetype == 'help'
+            return ''
         elseif &readonly
             return "\uf023"
         else
-            return ""
+            return ''
         endif
     endfunction
 
     function! LightLineFugitive()
-        if exists("*fugitive#head")
+        if &filetype !~? 'vimfiler\|gundo' && exists('*fugitive#head')
             let _ = fugitive#head()
             return strlen(_) ? "\ue725 "._ : ''
+        else
+            return ''
         endif
-        return ''
     endfunction
 
     function! LightLineFilename()
@@ -153,3 +155,7 @@ hook_add = '''
     \   },
     \}
 '''
+
+[[plugins]] # switch filetype
+repo = 'osyo-manga/vim-precious'
+depends = 'context_filetype.vim'
