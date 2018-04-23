@@ -67,6 +67,16 @@ build = 'make'
 [[plugins]] # browser
 repo = 'tyru/open-browser.vim'
 
+[[plugins]]
+repo = 'tyru/caw.vim'
+on_map = {nx = '<Plug>'}
+hook_add = '''
+    nnoremap [caw] <Nop>
+    nmap <Leader>c [caw]
+    nmap [caw] <Plug>(caw:zeropos:toggle)
+    vmap [caw] <Plug>(caw:zeropos:toggle)
+'''
+
 [[plugins]] # submode
 repo = 'kana/vim-submode'
 hook_post_source = '''
