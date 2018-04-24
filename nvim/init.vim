@@ -32,7 +32,7 @@ if dein#load_state(s:dein_dir)
     call dein#begin(s:dein_dir)
 
     let s:toml_dir = s:config_home . '/dein'
-    "cache toml files
+    " Cache Toml files
     call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
     call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
 
@@ -43,12 +43,12 @@ endif
 if has('vim_starting') && dein#check_install()
     call dein#install()
 endif
+" }}} end dein
 
 " path
 let g:python_host_prog=$PYENV_ROOT.'/versions/2.7.14/bin/python'
 let g:python3_host_prog=$PYENV_ROOT.'/versions/3.6.4/bin/python'
 let g:ruby_host_prog=$RBENV_ROOT.'/versions/2.5.0/bin/neovim-ruby-host'
-" }}} end dein
 
 " encoding
 set encoding=utf-8
