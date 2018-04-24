@@ -138,10 +138,11 @@ if has('nvim')
     set inccommand=nosplit
 endif
 " 補完設定
-set completeopt=menuone,longest,menu
+set completeopt=menuone,longest
 
 " 操作系
 " キーマップ
+inoremap <C-c> <Esc>
 nnoremap , \
 nnoremap ; :
 nnoremap : ;

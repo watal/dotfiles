@@ -159,3 +159,8 @@ hook_add = '''
 [[plugins]] # switch filetype
 repo = 'osyo-manga/vim-precious'
 depends = 'context_filetype.vim'
+hook_add = '''
+    let g:precious_enable_switch_CursorMoved = { '*': 0, 'help': 1 }
+    autocmd MyAutoCmd InsertEnter * :PreciousSwitch
+    autocmd MyAutoCmd InsertLeave * :PreciousReset
+'''
