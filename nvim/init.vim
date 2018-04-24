@@ -46,9 +46,9 @@ endif
 " }}} end dein
 
 " path
-let g:python_host_prog=$PYENV_ROOT.'/versions/2.7.14/bin/python'
-let g:python3_host_prog=$PYENV_ROOT.'/versions/3.6.4/bin/python'
-let g:ruby_host_prog=$RBENV_ROOT.'/versions/2.5.0/bin/neovim-ruby-host'
+let g:python_host_prog=$PYENV_ROOT . '/versions/2.7.14/bin/python'
+let g:python3_host_prog=$PYENV_ROOT . '/versions/3.6.5/bin/python'
+let g:ruby_host_prog=$RBENV_ROOT . '/versions/2.5.0/bin/neovim-ruby-host'
 
 " encoding
 set encoding=utf-8
@@ -137,6 +137,8 @@ nnoremap <ESC><ESC> :nohlsearch<CR>
 if has('nvim')
     set inccommand=nosplit
 endif
+" 補完設定
+set completeopt=menuone,longest,menu
 
 " 操作系
 " キーマップ
