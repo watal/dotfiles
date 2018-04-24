@@ -14,7 +14,7 @@ hook_add = '''
     nnoremap sb :<C-u>Denite buffer_tab -buffer-name=file<CR>
     nnoremap sB :<C-u>Denite buffer -buffer-name=file<CR>
 '''
-hook_post_source = '''
+hook_source = '''
     call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
     call denite#custom#var('grep', 'command', ['ag'])
     call denite#custom#var('grep', 'recursive_opts', [])
@@ -37,10 +37,19 @@ repo = 'Shougo/deoplete.nvim'
 depends = 'context_filetype.vim'
 on_i = 1
 hook_source = '''
-    let g:deoplete#enable_at_startup = 1
-    inoremap <expr><tab> pumvisible() ? "\<C-n>" :
-        \ neosnippet#expandable_or_jumpable() ?
-        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+    call deoplete#enable()
+    " <TAB>: completion.
+    inoremap <silent><expr> <TAB>
+          \ pumvisible() ? "\<C-n>" :
+          \ <SID>check_back_space() ? "\<TAB>" :
+          \ deoplete#manual_complete()
+    function! s:check_back_space() abort
+      let col = col('.') - 1
+      return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction
+
+    " <S-TAB>: completion back.
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 '''
 
 [[plugins]] # syntax
@@ -115,6 +124,7 @@ hook_add = '''
 
 [[plugins]] # submode
 repo = 'kana/vim-submode'
+on_event = 'VimEnter'
 hook_source = '''
     call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
     call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
