@@ -1,6 +1,5 @@
 [[plugins]] # denite
 repo = 'Shougo/denite.nvim'
-depends = 'neomru.vim'
 on_cmd = 'Denite'
 hook_add = '''
     nnoremap [denite] <Nop>
@@ -23,15 +22,48 @@ hook_post_source = '''
     call denite#custom#var('grep', 'default_opts', ['--follow', '--no-group', '--no-color'])
 '''
 
+[[plugins]] # neoyank
+repo = 'Shougo/neoyank.vim'
+on_event = 'TextYankPost'
+on_if = 1
+on_source = 'denite.nvim'
+
+[[plugins]] # neomru
+repo = 'Shougo/neomru.vim'
+on_source = 'denite.nvim'
+
 [[plugins]] # deoplete
 repo = 'Shougo/deoplete.nvim'
 depends = 'context_filetype.vim'
 on_i = 1
 hook_source = '''
-    call deoplete#enable()
+    let g:deoplete#enable_at_startup = 1
     inoremap <expr><tab> pumvisible() ? "\<C-n>" :
         \ neosnippet#expandable_or_jumpable() ?
-        \ "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+'''
+
+[[plugins]] # syntax
+repo = 'Shougo/neco-syntax'
+
+[[plugins]] # complete vim
+repo = 'Shougo/neco-vim'
+on_ft = 'vim'
+
+[[plugins]] # complete include files
+repo = 'Shougo/neoinclude.vim'
+on_if = 1
+
+[[plugins]] # look
+repo = 'ujihisa/neco-look'
+hook_source = '''
+    let g:deoplete#text_mode_filetypes={
+        \ 'gitrebase': 1,
+        \ 'gitcommit': 1,
+        \ 'markdown': 1,
+        \ 'text': 1,
+        \ 'tex': 1,
+    }
 '''
 
 [[plugins]] # neosnippet
@@ -53,9 +85,13 @@ hook_source = '''
 [[plugins]] # snippet
 repo = 'Shougo/neosnippet-snippets'
 
-[[plugins]] # neomru
-repo = 'Shougo/neomru.vim'
-on_source = 'Denite.nvim'
+[[plugins]] # echodoc
+repo = 'Shougo/echodoc.vim'
+on_event = 'CompleteDone'
+hook_source = '''
+" let g:echodoc#type = 'signature'
+call echodoc#enable()
+'''
 
 [[plugins]] # filetype
 repo = 'Shougo/context_filetype.vim'
@@ -67,7 +103,7 @@ build = 'make'
 [[plugins]] # browser
 repo = 'tyru/open-browser.vim'
 
-[[plugins]]
+[[plugins]] # comment
 repo = 'tyru/caw.vim'
 on_map = {nx = '<Plug>'}
 hook_add = '''
@@ -79,7 +115,7 @@ hook_add = '''
 
 [[plugins]] # submode
 repo = 'kana/vim-submode'
-hook_post_source = '''
+hook_source = '''
     call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
     call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
     call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
@@ -143,15 +179,15 @@ hook_add = '''
 repo = 'lervag/vimtex'
 on_ft = ['tex', 'plaintex']
 
-[[plugins]] # c snippet
+[[plugins]] # c complete
 repo = 'Shougo/deoplete-clangx'
 on_ft = ['c', 'cpp']
 
-[[plugins]] # python snippet
+[[plugins]] # python complete
 repo = 'zchee/deoplete-jedi'
 on_ft = 'python'
 
-[[plugins]] # go snippet
+[[plugins]] # go complete
 repo = 'zchee/deoplete-go'
 on_i = 1
 on_ft = 'go'
@@ -189,6 +225,9 @@ on_ft = ['md', 'markdown']
 hook_source = '''
     let g:previm_enable_realtime = 1
 '''
+[[plugins]] #GitHub Flavored Markdown
+repo = 'rhysd/vim-gfm-syntax'
+on_event = 'BufRead'
 
 [[plugins]] # Toml syntax
 repo  = 'cespare/vim-toml'
