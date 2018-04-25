@@ -168,8 +168,6 @@ depends = 'context_filetype.vim'
 [[plugins]] # comment
 repo = 'tomtom/tcomment_vim'
 hook_add = '''
-    nnoremap [tcomment] <Nop>
-    nmap     <Leader>c [tcomment]
-    nnoremap <silent> [tcomment] :TComment<CR>
-    vnoremap <silent> [tcomment] :TComment<CR>
+    nnoremap <silent> <Leader>c :TComment<CR>
+    vnoremap <silent> <Leader>c :TComment<CR>
 '''

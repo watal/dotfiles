@@ -124,8 +124,8 @@ depends = ['vim-nerdtree-syntax-highlight', 'vim-devicons']
 hook_add = '''
     nnoremap [nerdtree] <Nop>
     nmap     <Leader>n [nerdtree]
-    nnoremap <silent>[nerdtree]n :NERDTree<CR>
-    nnoremap <silent>[nerdtree]f :NERDTreeFind<CR>
+    nnoremap <silent> [nerdtree]n :NERDTree<CR>
+    nnoremap <silent> [nerdtree]f :NERDTreeFind<CR>
 '''
 
 [[plugins]] # nerdtree highlight
@@ -133,7 +133,7 @@ repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
 hook_add = '''
     nnoremap [gitgutter] <Nop>
     nmap     <Leader>g [gitgutter]
-    nnoremap <silent>[gitgutter] :GitGutterToggle<CR>
+    nnoremap <silent> [gitgutter] :GitGutterToggle<CR>
     let g:NERDTreeLimitedSyntax = 1
 '''
 
