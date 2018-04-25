@@ -46,9 +46,9 @@ endif
 " }}} end dein
 
 " path
-let g:python_host_prog=$PYENV_ROOT . '/versions/2.7.14/bin/python'
-let g:python3_host_prog=$PYENV_ROOT . '/versions/3.6.5/bin/python'
-let g:ruby_host_prog=$RBENV_ROOT . '/versions/2.5.0/bin/neovim-ruby-host'
+let g:python_host_prog = expand($PYENV_ROOT . '/versions/2.7.14/bin/python')
+let g:python3_host_prog = expand($PYENV_ROOT . '/versions/3.6.5/bin/python')
+let g:ruby_host_prog = expand($RBENV_ROOT . '/versions/2.5.0/bin/neovim-ruby-host')
 
 " encoding
 set encoding=utf-8
@@ -159,11 +159,11 @@ vnoremap gk k
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
 nnoremap Q <Nop>
-noremap <Leader>h  ^
-noremap <Leader>l  $
-nnoremap <Leader>w  :<C-u>w<CR>
-nnoremap <Leader>q  :<C-u>q<CR>
-nnoremap <Leader>Q  :<C-u>q!<CR>
+noremap <Leader>h ^
+noremap <Leader>l $
+nnoremap <Leader>w :<C-u>w<CR>
+nnoremap <Leader>q :<C-u>q<CR>
+nnoremap <Leader>Q :<C-u>q!<CR>
 " 貼り付けたテキストの末尾へ移動
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
