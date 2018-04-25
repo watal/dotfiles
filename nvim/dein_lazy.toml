@@ -37,12 +37,12 @@ hook_source = '''
     call deoplete#enable()
     " <TAB>: completion.
     inoremap <silent><expr> <TAB>
-          \ pumvisible() ? "\<C-n>" :
-          \ <SID>check_back_space() ? "\<TAB>" :
-          \ deoplete#manual_complete()
+    \   pumvisible() ? "\<C-n>" :
+    \   <SID>check_back_space() ? "\<TAB>" :
+    \   deoplete#manual_complete()
     function! s:check_back_space() abort
-      let col = col('.') - 1
-      return !col || getline('.')[col - 1]  =~ '\s'
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~ '\s'
     endfunction
 
     " <S-TAB>: completion back.
@@ -65,11 +65,11 @@ on_ft = ['c', 'cpp']
 repo = 'ujihisa/neco-look'
 hook_source = '''
     let g:deoplete#text_mode_filetypes={
-        \ 'gitrebase': 1,
-        \ 'gitcommit': 1,
-        \ 'markdown': 1,
-        \ 'text': 1,
-        \ 'tex': 1,
+    \   'gitrebase': 1,
+    \   'gitcommit': 1,
+    \   'markdown': 1,
+    \   'text': 1,
+    \   'tex': 1,
     }
 '''
 
@@ -96,8 +96,7 @@ repo = 'Shougo/neosnippet-snippets'
 repo = 'Shougo/echodoc.vim'
 on_event = 'CompleteDone'
 hook_source = '''
-" let g:echodoc#type = 'signature'
-call echodoc#enable()
+    call echodoc#enable()
 '''
 
 [[plugins]] # filetype
