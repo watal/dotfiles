@@ -42,12 +42,13 @@ if dein#load_state(s:dein_dir)
     call dein#save_state()
 endif
 
-filetype plugin indent on
-
 if has('vim_starting') && dein#check_install()
     call dein#install()
 endif
 " }}} end dein
+
+syntax enable
+filetype plugin indent on
 
 " encoding
 set encoding=utf-8
@@ -72,9 +73,9 @@ set history=50
 " クリップボード共有
 set clipboard+=unnamedplus
 
+set secure
+
 " 表示系
-" syntax有効化 (必ずdein#end()より後に書く)
-syntax on
 " 行番号を表示
 set number
 " 行末の一文字先までカーソルを移動可能に
@@ -105,6 +106,8 @@ set t_Co=256
 set termguicolors
 " テキスト挿入中の自動折り返しを日本語に対応
 set formatoptions+=mM
+" filetypeをtexに
+let g:tex_flavor = "latex"
 
 " インデント系
 " 行頭以外でのタブ文字の表示幅

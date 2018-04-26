@@ -238,6 +238,7 @@ hook_source = '''
 [[plugins]] # GitHub Flavored Markdown
 repo = 'rhysd/vim-gfm-syntax'
 on_event = 'BufRead'
+on_ft = ['md', 'markdown']
 
 [[plugins]] # Toml syntax
 repo  = 'cespare/vim-toml'
