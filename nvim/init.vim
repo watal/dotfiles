@@ -10,11 +10,13 @@ augroup END
 
 " Leader
 let mapleader = "\<Space>"
-let maplocalleader = ","
 
-" XDG
+" Path
 let s:cache_home = empty($XDG_CACHE_HOME) ? expand('$HOME/.cache') : $XDG_CACHE_HOME
 let s:config_home = empty($XDG_CONFIG_HOME) ? expand('$HOME/.config') : $XDG_CONFIG_HOME
+let g:python_host_prog = expand('$PYENV_ROOT/versions/2.7.14/bin/python')
+let g:python3_host_prog = expand('$PYENV_ROOT/versions/3.6.5/bin/python')
+let g:ruby_host_prog = expand('$RBENV_ROOT/versions/2.5.0/bin/neovim-ruby-host')
 
 " {{{ dein
 let s:dein_dir = s:cache_home . '/dein'
@@ -23,7 +25,7 @@ if &runtimepath !~# '/dein.vim'
     let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
     " Auto Download
     if !isdirectory(s:dein_repo_dir)
-        call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
+        execute '!git clone https://github.com/Shougo/dein.vim ' . s:dein_repo_dir
     endif
     execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
@@ -40,15 +42,12 @@ if dein#load_state(s:dein_dir)
     call dein#save_state()
 endif
 
+filetype plugin indent on
+
 if has('vim_starting') && dein#check_install()
     call dein#install()
 endif
 " }}} end dein
-
-" path
-let g:python_host_prog = expand($PYENV_ROOT . '/versions/2.7.14/bin/python')
-let g:python3_host_prog = expand($PYENV_ROOT . '/versions/3.6.5/bin/python')
-let g:ruby_host_prog = expand($RBENV_ROOT . '/versions/2.5.0/bin/neovim-ruby-host')
 
 " encoding
 set encoding=utf-8

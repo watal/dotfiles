@@ -146,6 +146,28 @@ hook_add = '''
     let g:gitgutter_enabled = 0
 '''
 
+[[plugins]] # LaTeX
+repo = 'lervag/vimtex'
+on_ft = ['tex', 'plaintex']
+hook_source = '''
+    let g:vimtex_compiler_latexmk = {
+    \   'background': 1,
+    \   'build_dir': '',
+    \   'continuous': 1,
+    \   'options': [
+    \       '-pdfdvi',
+    \       '-verbose',
+    \       '-file-line-error',
+    \       '-synctex=1',
+    \       '-interaction=nonstopmode',
+    \   ],
+    \}
+
+    let g:vimtex_view_general_viewer
+          \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+    let g:vimtex_view_general_options = '-g -r @line @pdf @tex'
+'''
+
 [[plugins]] # ALE
 repo = 'w0rp/ale'
 depends = 'vim-devicons'
@@ -166,10 +188,6 @@ hook_add = '''
     \   'cpp': 'g++',
     \}
 '''
-
-[[plugins]] # LaTeX
-repo = 'lervag/vimtex'
-on_ft = ['tex', 'plaintex']
 
 [[plugins]] # c complete
 repo = 'Shougo/deoplete-clangx'
@@ -217,7 +235,7 @@ on_ft = ['md', 'markdown']
 hook_source = '''
     let g:previm_enable_realtime = 1
 '''
-[[plugins]] #GitHub Flavored Markdown
+[[plugins]] # GitHub Flavored Markdown
 repo = 'rhysd/vim-gfm-syntax'
 on_event = 'BufRead'
 
