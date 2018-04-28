@@ -47,8 +47,8 @@ if has('vim_starting') && dein#check_install()
 endif
 " }}} end dein
 
-syntax enable
 filetype plugin indent on
+syntax enable
 
 " encoding
 set encoding=utf-8

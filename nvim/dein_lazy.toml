@@ -49,18 +49,6 @@ repo = 'Shougo/neoinclude.vim'
 on_i = 1
 on_ft = ['c', 'cpp']
 
-[[plugins]] # look
-repo = 'ujihisa/neco-look'
-hook_source = '''
-    let g:deoplete#text_mode_filetypes={
-    \   'gitrebase': 1,
-    \   'gitcommit': 1,
-    \   'markdown': 1,
-    \   'text': 1,
-    \   'tex': 1,
-    }
-'''
-
 [[plugins]] # neosnippet
 repo = 'Shougo/neosnippet'
 depends = ['neosnippet-snippets', 'context_filetype.vim']
@@ -146,9 +134,16 @@ hook_add = '''
     let g:gitgutter_enabled = 0
 '''
 
+[[plugins]] # comment
+repo = 'tyru/caw.vim'
+hook_add = '''
+    nmap <silent><Leader>c <Plug>(caw:zeropos:toggle)
+    vmap <silent><Leader>c <Plug>(caw:zeropos:toggle)
+'''
+
 [[plugins]] # LaTeX
 repo = 'lervag/vimtex'
-on_ft = ['tex', 'plaintex']
+on_ft = 'tex'
 hook_source = '''
     let g:vimtex_compiler_latexmk = {
     \   'background': 1,
@@ -162,7 +157,6 @@ hook_source = '''
     \       '-interaction=nonstopmode',
     \   ],
     \}
-
     let g:vimtex_view_general_viewer
           \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
     let g:vimtex_view_general_options = '-g -r @line @pdf @tex'
