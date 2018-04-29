@@ -44,6 +44,17 @@ set -x GOENV_ROOT "/usr/local/Cellar/anyenv/3cb8ad1/envs/goenv"
 set -x PATH $PATH "/usr/local/Cellar/anyenv/3cb8ad1/envs/goenv/bin"
 set -gx PATH '/usr/local/Cellar/anyenv/3cb8ad1/envs/goenv/shims' $PATH
 command goenv rehash 2>/dev/null
+function goenv
+  set command $argv[1]
+  set -e argv[1]
+
+  switch "$command"
+  case rehash shell
+    source (goenv "sh-$command" $argv|psub)
+  case '*'
+    command goenv "$command" $argv
+  end
+end
 
 # ndenv
 set -x NDENV_ROOT "/usr/local/Cellar/anyenv/3cb8ad1/envs/ndenv"
@@ -105,14 +116,3 @@ set -x PATH $PATH "/usr/local/Cellar/anyenv/3cb8ad1/envs/phpenv/bin"
 set -gx PATH '/usr/local/Cellar/anyenv/3cb8ad1/envs/phpenv/shims' $PATH
 set -gx PHPENV_SHELL fish
 phpenv rehash 2>/dev/null
-function phpenv
-  set command $argv[1]
-  set -e argv[1]
-
-  switch "$command"
-  case rehash shell
-    eval (phpenv "sh-$command" $argv)
-  case '*'
-    command phpenv "$command" $argv
-  end
-end
