@@ -16,7 +16,7 @@ let s:cache_home = empty($XDG_CACHE_HOME) ? expand('$HOME/.cache') : $XDG_CACHE_
 let s:config_home = empty($XDG_CONFIG_HOME) ? expand('$HOME/.config') : $XDG_CONFIG_HOME
 let g:python_host_prog = expand('$PYENV_ROOT/versions/2.7.14/bin/python')
 let g:python3_host_prog = expand('$PYENV_ROOT/versions/3.6.5/bin/python')
-let g:ruby_host_prog = expand('$RBENV_ROOT/versions/2.5.0/bin/neovim-ruby-host')
+let g:ruby_host_prog = expand('$RBENV_ROOT/versions/2.5.1/bin/ruby')
 
 " {{{ dein
 let s:dein_dir = s:cache_home . '/dein'
