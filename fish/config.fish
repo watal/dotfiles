@@ -13,6 +13,6 @@ set theme_color_scheme zenburn
 # tex
 set -x PATH /Library/TeX/texbin $PATH
 
-set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
-set -g fish_user_paths "/usr/local/opt/curl/bin" $fish_user_paths
-set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
+set -g -x PATH /usr/local/sbin $PATH
+set -g -x PATH /usr/local/opt/curl/bin $PATH
+set -g -x PATH /usr/local/opt/openssl/bin $PATH
