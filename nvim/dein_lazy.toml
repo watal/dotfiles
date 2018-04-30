@@ -134,13 +134,6 @@ hook_add = '''
     let g:gitgutter_enabled = 0
 '''
 
-[[plugins]] # comment
-repo = 'tyru/caw.vim'
-hook_add = '''
-    nmap <silent><Leader>c <Plug>(caw:zeropos:toggle)
-    vmap <silent><Leader>c <Plug>(caw:zeropos:toggle)
-'''
-
 # [[plugins]] # LaTeX
 # repo = 'lervag/vimtex'
 # on_ft = 'tex'

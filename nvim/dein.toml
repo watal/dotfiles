@@ -161,3 +161,10 @@ hook_add = '''
 [[plugins]] # switch filetype
 repo = 'osyo-manga/vim-precious'
 depends = 'context_filetype.vim'
+
+[[plugins]] # comment
+repo = 'tyru/caw.vim'
+hook_add = '''
+    nmap <silent><Leader>c <Plug>(caw:zeropos:toggle)
+    vmap <silent><Leader>c <Plug>(caw:zeropos:toggle)
+'''
