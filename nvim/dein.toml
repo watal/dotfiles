@@ -1,6 +1,10 @@
 [[plugins]] # dein
 repo = 'Shougo/dein.vim'
 
+[[plugins]] # vimproc
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
 [[plugins]] # iceberg
 repo = 'cocopon/iceberg.vim'
 hook_add = '''
@@ -135,14 +139,18 @@ repo = 'thinca/vim-quickrun'
 depends = 'vimproc'
 hook_add = '''
     let g:quickrun_config = {
-    \   'runner': 'vimproc',
+    \   '_': {
+    \       'outputter' : 'error',
+    \       "outputter/buffer/close_on_empty" : 1,
+    \       'outputter/error/success' : 'null',
+    \       'outputter/error/error' : 'quickfix',
+    \       'runner': 'vimproc',
+    \       'runner/vimproc/updatetime' : 40,
+    \   },
     \   'tex': {
     \       'command' : 'latexmk',
     \       'cmdopt' : '-pv',
     \       'exec' : '%c %o %s',
-    \       'outputter' : 'error',
-    \       'outputter/error/success' : 'null',
-    \       'outputter/error/error' : 'quickfix',
     \       'srcfile' : expand("%"),
     \       'hook/sweep/files' : [
     \           '%S:p:r.aux',

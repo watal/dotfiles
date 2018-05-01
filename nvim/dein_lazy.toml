@@ -78,10 +78,6 @@ hook_source = '''
 [[plugins]] # filetype
 repo = 'Shougo/context_filetype.vim'
 
-[[plugins]] # vimproc
-repo = 'Shougo/vimproc.vim'
-build = 'make'
-
 [[plugins]] # ctrlp
 repo = 'ctrlpvim/ctrlp.vim'
 hook_add = '''
@@ -150,17 +146,18 @@ hook_add = '''
 #     \       '-interaction=nonstopmode',
 #     \   ],
 #     \}
+#     let g:vimtex_compiler_progname = 'nvr'
+#     let g:vimtex_fold_envs = 0
 #     let g:vimtex_view_general_viewer
-#           \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+#     \   = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 #     let g:vimtex_view_general_options = '-g -r @line @pdf @tex'
 #     let g:vimtex_view_method='skim'
-#     let g:vimtex_compiler_progname = 'nvr'
 # '''
 
 [[plugins]] # ALE
 repo = 'w0rp/ale'
 depends = 'vim-devicons'
-hook_add = '''
+hook_source = '''
     let g:ale_set_loclist = 0
     let g:ale_set_quickfix = 1
     let g:ale_sign_error = "\uf057"
