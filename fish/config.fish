@@ -1,5 +1,5 @@
-. ~/.config/fish/aliases.fish
-. ~/.config/fish/anyenv.fish
+. "$HOME/.config/fish/aliases.fish"
+. "$HOME/.config/fish/anyenv.fish"
 
 #peco
 function fish_user_key_bindings
