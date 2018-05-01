@@ -165,7 +165,6 @@ noremap <Leader>h ^
 noremap <Leader>l $
 nnoremap <Leader>w :<C-u>w<CR>
 nnoremap <Leader>q :<C-u>q<CR>
-nnoremap <Leader>Q :<C-u>q!<CR>
 " 貼り付けたテキストの末尾へ移動
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
@@ -203,8 +202,9 @@ set backspace=indent,eol,start
 " マウスホイールの有効化
 set mouse=a
 
-" Auto-close quickfix window
+" Quickfixのみならば終了
 autocmd MyAutoCmd WinEnter * if (winnr('$') == 1 && (getbufvar(winbufnr(0), '&buftype')) == 'quickfix') | quit | endif
+" NERDTreeのみならば終了
 autocmd MyAutoCmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | quit | endif
 
 " 保存時に行末の空白を除去
