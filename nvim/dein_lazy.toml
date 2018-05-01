@@ -9,6 +9,7 @@ hook_add = '''
     nnoremap <silent> [denite]r :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
     nnoremap <silent> [denite]f :<C-u>Denite file_rec<CR>
     nnoremap <silent> [denite]l :<C-u>Denite line<CR>
+    nnoremap <silent> [denite]y :<C-u>Denite neoyank<CR>
     nnoremap sb :<C-u>Denite buffer<CR>
 '''
 hook_source = '''
@@ -147,7 +148,6 @@ hook_add = '''
 #     \   ],
 #     \}
 #     let g:vimtex_compiler_progname = 'nvr'
-#     let g:vimtex_fold_envs = 0
 #     let g:vimtex_view_general_viewer
 #     \   = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 #     let g:vimtex_view_general_options = '-g -r @line @pdf @tex'
@@ -237,3 +237,11 @@ on_ft = 'yaml'
 [[plugins]] # gnuplot syntax
 repo = 'vim-scripts/gnuplot.vim'
 on_ft = 'gp'
+
+[[plugins]] # fish syntax
+repo = 'vim-scripts/fish-syntax'
+on_ft = 'fish'
+
+[[plugins]] # help
+repo   = 'vim-jp/vimdoc-ja'
+on_cmd = ['h', 'help']
