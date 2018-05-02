@@ -157,7 +157,7 @@ hook_add = '''
 [[plugins]] # ALE
 repo = 'w0rp/ale'
 depends = 'vim-devicons'
-hook_source = '''
+hook_add = '''
     let g:ale_set_loclist = 0
     let g:ale_set_quickfix = 1
     let g:ale_sign_error = "\uf057"
