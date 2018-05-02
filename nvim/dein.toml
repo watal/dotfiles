@@ -30,7 +30,6 @@ hook_add = '''
 
 [[plugins]] # icons
 repo = 'ryanoasis/vim-devicons'
-depends = 'nerdtree'
 hook_add = '''
     let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 '''
