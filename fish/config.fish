@@ -1,18 +1,17 @@
-. "$HOME/.config/fish/aliases.fish"
-. "$HOME/.config/fish/anyenv.fish"
+source "$HOME/.config/fish/aliases.fish"
+source "$HOME/.config/fish/anyenv.fish"
 
 #peco
 function fish_user_key_bindings
     bind \cr peco_select_history
 end
 
-set -g theme_display_user yes
-set -x LANG en_US
-set theme_color_scheme zenburn
+set theme_display_user yes
+set LANG en_US
 
 # tex
-set -x PATH /Library/TeX/texbin $PATH
+set PATH /Library/TeX/texbin $PATH
 
-set -g -x PATH /usr/local/sbin $PATH
-set -g -x PATH /usr/local/opt/curl/bin $PATH
-set -g -x PATH /usr/local/opt/openssl/bin $PATH
+set PATH /usr/local/sbin $PATH
+set PATH /usr/local/opt/curl/bin $PATH
+set PATH /usr/local/opt/openssl/bin $PATH

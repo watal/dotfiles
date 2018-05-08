@@ -1,4 +1,4 @@
-. "$HOME/.config/fish/aliases_local.fish"
+source "$HOME/.config/fish/aliases_local.fish"
 
 alias cp 'cp -i'
 alias mv 'mv -i'
