@@ -6,12 +6,12 @@ function fish_user_key_bindings
     bind \cr peco_select_history
 end
 
-set theme_display_user yes
-set LANG en_US
+set -x theme_display_user yes
+set -x LANG en_US
 
 # tex
-set PATH /Library/TeX/texbin $PATH
+set -x PATH /Library/TeX/texbin $PATH
 
-set PATH /usr/local/sbin $PATH
-set PATH /usr/local/opt/curl/bin $PATH
-set PATH /usr/local/opt/openssl/bin $PATH
+set -x PATH /usr/local/sbin $PATH
+set -x PATH /usr/local/opt/curl/bin $PATH
+set -x PATH /usr/local/opt/openssl/bin $PATH
