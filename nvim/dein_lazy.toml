@@ -154,26 +154,6 @@ hook_add = '''
 #     let g:vimtex_view_method='skim'
 # '''
 
-[[plugins]] # ALE
-repo = 'w0rp/ale'
-depends = 'vim-devicons'
-hook_add = '''
-    let g:ale_set_loclist = 0
-    let g:ale_set_quickfix = 1
-    let g:ale_sign_error = "\uf057"
-    let g:ale_sign_warning = "\uf06a"
-    let g:ale_statusline_format = ["\uf057 %d", "\uf06a %d", "\uf058"]
-    let g:ale_echo_msg_error_str = 'E'
-    let g:ale_echo_msg_warning_str = 'W'
-    let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-    let g:ale_open_list = 1
-    let g:ale_lint_on_enter = 0
-    let g:ale_linters= {
-    \   'c': 'gcc',
-    \   'cpp': 'g++',
-    \}
-'''
-
 [[plugins]] # c complete
 repo = 'Shougo/deoplete-clangx'
 on_ft = ['c', 'cpp']

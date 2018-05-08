@@ -34,6 +34,21 @@ hook_add = '''
     let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 '''
 
+[[plugins]] # ALE
+repo = 'w0rp/ale'
+hook_add = '''
+    let g:ale_set_loclist = 0
+    let g:ale_set_quickfix = 1
+    let g:ale_sign_error = "\uf057"
+    let g:ale_sign_warning = "\uf06a"
+    let g:ale_statusline_format = ["\uf057 %d", "\uf06a %d", "\uf058"]
+    let g:ale_echo_msg_error_str = 'E'
+    let g:ale_echo_msg_warning_str = 'W'
+    let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+    let g:ale_open_list = 1
+    let g:ale_lint_on_enter = 0
+'''
+
 [[plugins]] # lightline
 repo = 'itchyny/lightline.vim'
 depends = 'vim-fugitive'
@@ -101,32 +116,32 @@ hook_add = '''
     endfunction
 
     function! LightLineFiletype()
-      return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+        return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
     endfunction
 
     function! LightLineFileformat()
-      return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+        return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
     endfunction
 
     function! LightlineLinterErrors() abort
-      let l:counts = ale#statusline#Count(bufnr(''))
-      let l:all_errors = l:counts.error + l:counts.style_error
-      let l:all_non_errors = l:counts.total - l:all_errors
-      return l:all_errors == 0 ? '' : printf("\uf057 %d", all_errors)
+        let l:counts = ale#statusline#Count(bufnr(''))
+        let l:all_errors = l:counts.error + l:counts.style_error
+        let l:all_non_errors = l:counts.total - l:all_errors
+        return l:all_errors == 0 ? '' : printf("\uf057 %d", all_errors)
     endfunction
 
     function! LightlineLinterWarnings() abort
-      let l:counts = ale#statusline#Count(bufnr(''))
-      let l:all_errors = l:counts.error + l:counts.style_error
-      let l:all_non_errors = l:counts.total - l:all_errors
-      return l:all_non_errors == 0 ? '' : printf("\uf06a %d", all_non_errors)
+        let l:counts = ale#statusline#Count(bufnr(''))
+        let l:all_errors = l:counts.error + l:counts.style_error
+        let l:all_non_errors = l:counts.total - l:all_errors
+        return l:all_non_errors == 0 ? '' : printf("\uf06a %d", all_non_errors)
     endfunction
 
     function! LightlineLinterOK() abort
-      let l:counts = ale#statusline#Count(bufnr(''))
-      let l:all_errors = l:counts.error + l:counts.style_error
-      let l:all_non_errors = l:counts.total - l:all_errors
-      return l:counts.total == 0 ? "\uf058" : ''
+        let l:counts = ale#statusline#Count(bufnr(''))
+        let l:all_errors = l:counts.error + l:counts.style_error
+        let l:all_non_errors = l:counts.total - l:all_errors
+        return l:counts.total == 0 ? "\uf058" : ''
     endfunction
 
     " hide --INSERT--
