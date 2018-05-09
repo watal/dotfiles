@@ -1,7 +1,7 @@
 source "$HOME/.config/fish/aliases.fish"
 source "$HOME/.config/fish/anyenv.fish"
 
-#peco
+# peco
 function fish_user_key_bindings
     bind \cr peco_select_history
 end
@@ -15,3 +15,8 @@ set -x PATH /Library/TeX/texbin $PATH
 set -x PATH /usr/local/sbin $PATH
 set -x PATH /usr/local/opt/curl/bin $PATH
 set -x PATH /usr/local/opt/openssl/bin $PATH
+
+# iterm
+echo -ne "\033]6;1;bg;red;brightness;\a"
+echo -ne "\033]6;1;bg;green;brightness;\a"
+echo -ne "\033]6;1;bg;blue;brightness;\a"

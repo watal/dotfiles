@@ -2268,7 +2268,7 @@
 	<key>DockIconTogglesWindow</key>
 	<false/>
 	<key>EnableDivisionView</key>
-	<true/>
+	<false/>
 	<key>EnableProxyIcon</key>
 	<false/>
 	<key>FlashTabBarInFullscreen</key>
@@ -2385,9 +2385,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>346 172 606 469 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>513 384 796 473 0 0 1680 1028 </string>
+	<string>629 450 796 473 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>613 0 1067 1028 0 0 1680 1028 </string>
+	<string>0 0 1680 1028 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>21 527 570 402 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -4005,7 +4005,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-04-28T06:11:36Z</date>
+	<date>2018-05-08T10:48:41Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
