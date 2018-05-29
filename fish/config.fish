@@ -18,4 +18,4 @@ set -x PATH /usr/local/opt/curl/bin $PATH
 set -x PATH /usr/local/opt/openssl/bin $PATH
 
 # iterm
-# echo -ne "\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;0\a"
+echo -ne "\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;0\a"
