@@ -148,6 +148,21 @@ hook_add = '''
     set noshowmode
 '''
 
+[[plugins]] # tmuxline
+repo = 'edkolev/tmuxline.vim'
+hook_add = '''
+let g:tmuxline_preset = {
+    \ 'a' : '#S',
+    \ 'c' : ['#(whoami)', '#(uptime | cud -d " " -f 1,2,3)'],
+    \ 'win' : ['#I', '#W'],
+    \ 'cwin' : ['#I', '#W', '#F'],
+    \ 'x' : '#(date)',
+    \ 'y' : ['%R', '%a', '%Y'],
+    \ 'z' : '#H'
+    \ }
+let g:tmuxline_theme = 'iceberg'
+'''
+
 [[plugins]] # quickrun
 repo = 'thinca/vim-quickrun'
 depends = 'vimproc'
