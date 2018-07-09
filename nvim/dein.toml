@@ -37,6 +37,9 @@ hook_add = '''
 [[plugins]] # ALE
 repo = 'w0rp/ale'
 hook_add = '''
+    nnoremap [ale] <Nop>
+    nmap     <Leader>a [ale]
+    nnoremap <silent> [ale] :ALEToggle<CR>
     let g:ale_set_loclist = 0
     let g:ale_set_quickfix = 1
     let g:ale_sign_error = "\uf057"
