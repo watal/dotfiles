@@ -219,11 +219,10 @@ depends = 'fzf'
 hook_add = '''
     nnoremap [fzf] <Nop>
     nmap     <Leader>f [fzf]
+    nnoremap <silent> [fzf]a :Ag<CR>
     nnoremap <silent> [fzf]b :Buffers<CR>
     nnoremap <silent> [fzf]x :Commands<CR>
-    nnoremap <silent> [fzf]f :GFiles<CR>
-    nnoremap <silent> [fzf]a :Ag<CR>
-    nnoremap <silent> [fzf]k :bd<CR>
+    nnoremap <silent> [fzf]f :Files<CR>
     command! FZFMru call fzf#run({
     \  'source':  v:oldfiles,
     \  'sink':    'e',
