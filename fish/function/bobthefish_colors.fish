@@ -1,3 +1,4 @@
+# Port of the Iceberg theme to bobthefish
 function bobthefish_colors -S -d 'Define a custom bobthefish color scheme'
 
   __bobthefish_colors default
