@@ -7,9 +7,6 @@ source "$HOME/.config/fish/anyenv.fish"
 #     bind \c] peco_select_ghq_repository
 # end
 
-# fzf-z
-bind \cf fzf-z-search
-
 set -x theme_display_user yes
 set -x LANG en_US
 set -x LC_ALL en_US.UTF-8

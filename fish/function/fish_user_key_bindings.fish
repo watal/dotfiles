@@ -44,4 +44,7 @@ function fish_user_key_bindings
     ### fzf_ghq ###
     bind \c] 'fzf_ghq'
     ### fzf_ghq ###
+    ### fzf-z ###
+    bind \cf 'fzf-z-search'
+    ### fzf-z ###
 end
