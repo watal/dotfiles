@@ -2,10 +2,13 @@ source "$HOME/.config/fish/aliases.fish"
 source "$HOME/.config/fish/anyenv.fish"
 
 # peco
-function fish_user_key_bindings
-    bind \cr peco_select_history
-    bind \c] peco_select_ghq_repository
-end
+# function fish_user_key_bindings
+#     bind \cr peco_select_history
+#     bind \c] peco_select_ghq_repository
+# end
+
+# fzf-z
+bind \cf fzf-z-search
 
 set -x theme_display_user yes
 set -x LANG en_US
@@ -20,3 +23,6 @@ set -x PATH /usr/local/opt/openssl/bin $PATH
 
 # iterm
 echo -ne "\033]6;1;bg;red;brightness;0\a\033]6;1;bg;green;brightness;0\a\033]6;1;bg;blue;brightness;0\a"
+
+# fzf
+set -x FZF_DEFAULT_COMMAND 'ag -g ""'
