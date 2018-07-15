@@ -216,3 +216,18 @@ merged =  0
 [[plugins]] # fzf
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
+hook_add = '''
+    nnoremap [fzf] <Nop>
+    nmap     <Leader>f [fzf]
+    nnoremap <silent> [fzf]b :Buffers<CR>
+    nnoremap <silent> [fzf]x :Commands<CR>
+    nnoremap <silent> [fzf]f :GFiles<CR>
+    nnoremap <silent> [fzf]a :Ag<CR>
+    nnoremap <silent> [fzf]k :bd<CR>
+    command! FZFMru call fzf#run({
+    \  'source':  v:oldfiles,
+    \  'sink':    'e',
+    \  'options': '-m -x +s',
+    \  'down':    '40%'})
+    nnoremap <Leader>r :FZFMru<CR>
+'''
