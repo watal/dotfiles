@@ -14,15 +14,15 @@ hook_add = '''
     autocmd MyAutoCmd ColorScheme * highlight CursorLineNr guifg=#777ea4
     autocmd MyAutoCmd ColorScheme * highlight SpecialKey guifg=#84a0c6
     autocmd MyAutoCmd ColorScheme * highlight SpecialKey guibg=none
-    " replace #b4be82 to 94ce94
-    autocmd MyAutoCmd ColorScheme * highlight MoreMsg guifg=#99c684
-    autocmd MyAutoCmd ColorScheme * highlight PreProc guifg=#99c684
-    autocmd MyAutoCmd ColorScheme * highlight Question guifg=#99c684
-    autocmd MyAutoCmd ColorScheme * highlight Special guifg=#99c684
-    autocmd MyAutoCmd ColorScheme * highlight diffAdded guifg=#99c684
-    autocmd MyAutoCmd ColorScheme * highlight EasyMotionTarget guifg=#99c684
-    autocmd MyAutoCmd ColorScheme * highlight GitGutterAdd guifg=#99c684
-    let g:terminal_color_2 = '#99c684'
+    " replace #b4be82 to 9ac684
+    autocmd MyAutoCmd ColorScheme * highlight MoreMsg guifg=#9ac684
+    autocmd MyAutoCmd ColorScheme * highlight PreProc guifg=#9ac684
+    autocmd MyAutoCmd ColorScheme * highlight Question guifg=#9ac684
+    autocmd MyAutoCmd ColorScheme * highlight Special guifg=#9ac684
+    autocmd MyAutoCmd ColorScheme * highlight diffAdded guifg=#9ac684
+    autocmd MyAutoCmd ColorScheme * highlight EasyMotionTarget guifg=#9ac684
+    autocmd MyAutoCmd ColorScheme * highlight GitGutterAdd guifg=#9ac684
+    let g:terminal_color_2 = '#9ac684'
 
     autocmd MyAutoCmd VimEnter * nested colorscheme iceberg
     autocmd MyAutoCmd VimEnter * nested highlight clear CursorLine
@@ -230,3 +230,7 @@ hook_add = '''
     \  'down':    '40%'})
     nnoremap <Leader>r :FZFMru<CR>
 '''
+
+
+[[plugins]] # table-mode
+repo = 'dhruvasagar/vim-table-mode'
