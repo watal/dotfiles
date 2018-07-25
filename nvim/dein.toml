@@ -231,6 +231,5 @@ hook_add = '''
     nnoremap <Leader>r :FZFMru<CR>
 '''
 
-
 [[plugins]] # table-mode
 repo = 'dhruvasagar/vim-table-mode'
