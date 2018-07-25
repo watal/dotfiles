@@ -118,6 +118,10 @@ set expandtab
 " 自動インデント
 set autoindent
 set smartindent
+" helpの日本語化
+set helplang=ja,en
+" helpを画面分割で開く
+autocmd MyAutoCmd BufRead,BufEnter */doc/* if &buftype == 'help' | wincmd L | setl number | setl winfixwidth | vertical resize 86 | endif
 
 " 検索系
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索
@@ -144,7 +148,7 @@ set completeopt=menuone,longest
 " 操作系
 " キーマップ
 inoremap <C-c> <Esc>
-nnoremap , \
+" nnoremap , \
 nnoremap ; :
 nnoremap : ;
 vnoremap ; :
@@ -164,6 +168,7 @@ noremap <Leader>h ^
 noremap <Leader>l $
 nnoremap <Leader>w :<C-u>w<CR>
 nnoremap <Leader>q :<C-u>q<CR>
+nnoremap Y y$
 " 貼り付けたテキストの末尾へ移動
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
