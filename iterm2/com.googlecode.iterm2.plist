@@ -2654,7 +2654,7 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSColorPanelMode</key>
-	<string>5</string>
+	<string>1</string>
 	<key>NSColorPickerPageableNameListDefaults</key>
 	<string>1Unnamed 2</string>
 	<key>NSColorPickerPreferredRGBEntryMode</key>
@@ -2686,7 +2686,7 @@
 	<key>NSFontPanelSizeSliderParams</key>
 	<string>2 0 100</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/bin/Iceberg-iTerm2</string>
+	<string>~/dotfiles/iterm2</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
@@ -2733,7 +2733,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSColorPanel</key>
-	<string>1085 78 228 280 0 0 1680 1028 </string>
+	<string>1124 203 228 280 0 0 1680 1028 </string>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1226 33 445 77 0 0 1680 1028 </string>
 	<key>NSWindow Frame ProfilesPanel</key>
@@ -2743,11 +2743,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>346 172 606 469 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>518 634 928 394 0 0 1680 1028 </string>
+	<string>662 516 796 473 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>840 0 838 1028 0 0 1680 1028 </string>
+	<string>0 577 650 451 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>837 0 834 1028 0 0 1680 1028 </string>
+	<string>1 562 650 451 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>0 342 983 686 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -3874,7 +3874,7 @@
 			<key>HotKey Window Animates</key>
 			<true/>
 			<key>HotKey Window AutoHides</key>
-			<true/>
+			<false/>
 			<key>HotKey Window Dock Click Action</key>
 			<integer>0</integer>
 			<key>HotKey Window Floats</key>
@@ -4363,7 +4363,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-07-19T06:55:57Z</date>
+	<date>2018-07-28T02:13:11Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
