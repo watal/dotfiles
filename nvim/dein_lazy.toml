@@ -47,7 +47,6 @@ on_ft = 'vim'
 
 [[plugins]] # complete include files
 repo = 'Shougo/neoinclude.vim'
-on_i = 1
 on_ft = ['c', 'cpp']
 
 [[plugins]] # neosnippet
@@ -158,9 +157,9 @@ hook_add = '''
 repo = 'Shougo/deoplete-clangx'
 on_ft = ['c', 'cpp']
 
-# [[plugins]] # python complete
-# repo = 'zchee/deoplete-jedi'
-# on_ft = 'python'
+[[plugins]] # python complete
+repo = 'zchee/deoplete-jedi'
+on_ft = 'python'
 
 [[plugins]] # go complete
 repo = 'zchee/deoplete-go'
