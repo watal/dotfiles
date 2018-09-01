@@ -30,6 +30,23 @@ on_source = 'denite.nvim'
 repo = 'Shougo/neomru.vim'
 on_source = 'denite.nvim'
 
+[[plugins]] # deol
+repo = 'Shougo/deol.nvim'
+on_cmd = 'Deol'
+depends = 'denite.nvim'
+hook_add = '''
+    nmap     <Leader>s [deol]
+    nnoremap <silent> [deol]n :<C-u>call deol#new({'command': 'fish'})<CR>
+    nnoremap <silent> [deol]s :<C-u>Deol<CR>
+'''
+# hook_source = '''
+#   autocmd MyAutoCmd FileType deol call s:on_deol()
+#   function! s:on_deol() abort
+#     nnoremap <buffer><silent> [Space]gc :<C-u>call deol#send('git commit')<CR>
+#     nnoremap <buffer><silent> [Space]gA :<C-u>call deol#send('git commit --amend')<CR>
+#   endfunction
+# '''
+
 [[plugins]] # deoplete
 repo = 'Shougo/deoplete.nvim'
 depends = 'context_filetype.vim'
