@@ -281,3 +281,6 @@ hook_add = '''
 
 [[plugins]] # table-mode
 repo = 'dhruvasagar/vim-table-mode'
+
+[[plugins]]
+repo = 'Lokaltog/vim-easymotion'
