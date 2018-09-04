@@ -1,12 +1,6 @@
 source "$HOME/.config/fish/aliases.fish"
 source "$HOME/.config/fish/anyenv.fish"
 
-# peco
-# function fish_user_key_bindings
-#     bind \cr peco_select_history
-#     bind \c] peco_select_ghq_repository
-# end
-
 set -x theme_display_user yes
 set -x LANG en_US
 set -x LC_ALL en_US.UTF-8

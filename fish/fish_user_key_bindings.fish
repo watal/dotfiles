@@ -1,7 +1,4 @@
 function fish_user_key_bindings
-    ### fzf-z ###
-    bind \ce 'fzf-z-search'
-    ### fzf-z ###
     ### fzf ###
     if test "$FZF_LEGACY_KEYBINDINGS" -eq 1
         bind \ct '__fzf_find_file'
@@ -38,13 +35,24 @@ function fish_user_key_bindings
         bind \t '__fzf_complete'
     end
     ### fzf ###
+
+    ### fzf-z ###
+    bind \ce 'fzf-z-search'
+    ### fzf-z ###
+
     ### fzf_ghq ###
     bind \c] 'fzf_ghq'
     ### fzf_ghq ###
+
     ### ghq ###
     bind \cg '__ghq_crtl_g'
     if bind -M insert >/dev/null ^/dev/null
         bind -M insert \cg '__ghq_crtl_g'
     end
     ### ghq ###
+
+    ### peco ###
+    # bind \cr peco_select_history
+    # bind \c] peco_select_ghq_repository
+    ### peco ###
 end
