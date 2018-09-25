@@ -37,7 +37,7 @@ function fish_user_key_bindings
     ### fzf ###
 
     ### fzf-z ###
-    bind \ce 'fzf-z-search'
+    bind \ck 'fzf-z-search'
     ### fzf-z ###
 
     ### fzf_ghq ###
