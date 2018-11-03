@@ -125,8 +125,8 @@ depends = ['vim-nerdtree-syntax-highlight', 'vim-devicons']
 hook_add = '''
     nnoremap [nerdtree] <Nop>
     nmap     <Leader>n [nerdtree]
-    nnoremap <silent> [nerdtree]n :NERDTree<CR>
-    nnoremap <silent> [nerdtree]f :NERDTreeFind<CR>
+    nnoremap <silent> [nerdtree]h :NERDTree<CR>
+    nnoremap <silent> [nerdtree]n :NERDTreeFind<CR>
 '''
 
 [[plugins]] # nerdtree highlight
@@ -238,8 +238,12 @@ repo = 'vim-scripts/fish-syntax'
 on_ft = 'fish'
 
 [[plugins]] # help-ja
-repo   = 'vim-jp/vimdoc-ja'
+repo = 'vim-jp/vimdoc-ja'
 on_cmd = ['h', 'help']
+
+[[plugins]]
+repo = 'keith/swift.vim'
+on_ft = 'swift'
 
 [[plugins]] # Applescript
 repo = 'vim-scripts/applescript.vim'
