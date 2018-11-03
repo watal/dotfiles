@@ -13,6 +13,6 @@ set -x PATH /usr/local/opt/curl/bin $PATH
 set -x PATH /usr/local/opt/openssl/bin $PATH
 
 # iterm
-echo -ne "\033]6;1;bg;red;brightness;22\a"
-echo -ne "\033]6;1;bg;green;brightness;24\a"
-echo -ne "\033]6;1;bg;blue;brightness;32\a"
+# echo -ne "\033]6;1;bg;red;brightness;22\a"
+# echo -ne "\033]6;1;bg;green;brightness;24\a"
+# echo -ne "\033]6;1;bg;blue;brightness;32\a"
