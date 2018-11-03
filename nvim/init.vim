@@ -8,6 +8,10 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
+augroup RemoveDust
+  autocmd!
+augroup END
+
 " Leader
 let mapleader = "\<Space>"
 
@@ -107,6 +111,8 @@ set termguicolors
 set formatoptions+=mM
 " filetypeをtexに
 let g:tex_flavor = "latex"
+" 起動メッセージoff
+set shortmess+=I
 
 " インデント系
 " 行頭以外でのタブ文字の表示幅
@@ -221,7 +227,8 @@ function! s:remove_dust()
     call setpos(".", cursor)
     unlet cursor
 endfunction
-autocmd MyAutoCmd BufWritePre * call <SID>remove_dust()
+autocmd RemoveDust BufWritePre * call <SID>remove_dust()
+autocmd MyAutoCmd filetype markdown autocmd! RemoveDust
 
 autocmd MyAutoCmd QuickFixCmdPost *grep* cwindow
 
