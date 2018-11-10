@@ -195,7 +195,7 @@ on_ft = 'slim'
 repo = 'othree/html5.vim'
 on_ft = 'html'
 
-[[plugins]]
+[[plugins]] # javascript
 repo = 'pangloss/vim-javascript'
 on_ft = ['javascript', 'javascript.jsx']
 
@@ -203,25 +203,30 @@ on_ft = ['javascript', 'javascript.jsx']
 repo = 'maxmellon/vim-jsx-pretty'
 on_ft = ['javascript', 'javascript.jsx']
 
-[[plugins]]
+[[plugins]] # javascript-libraries-systax
 repo = 'othree/javascript-libraries-syntax.vim'
 on_ft = ['javascript', 'javascript.jsx']
 
-[[plugins]]
+[[plugins]] # ECMAScript future syntax
 repo = 'othree/es.next.syntax.vim'
-on_ft = ['javascript', 'javascript.jsx']
+on_ft = ['c', 'cpp', 'css', 'go', 'html', 'java', 'javascript', 'javascript.jsx', 'python']
 
-[[plugins]] # autoformat
-repo = 'Chiel92/vim-autoformat'
-on_ft = ['javascript', 'javascript.jsx']
+[[plugins]] # vim-maktaba
+repo = 'google/vim-maktaba'
+on_ft = ['c', 'cpp', 'css', 'go', 'html', 'java', 'javascript', 'javascript.jsx', 'python']
+
+[[plugins]] # vim-codefmt
+repo = 'google/vim-codefmt'
+on_ft = ['c', 'cpp', 'css', 'go', 'html', 'java', 'javascript', 'javascript.jsx', 'python']
 hook_source = '''
-    let g:autoformat_autoindent = 0
-    let g:autoformat_retab = 0
-    let g:autoformat_remove_trailing_spaces = 0
-    nnoremap [autoformat] <Nop>
-    nmap     <Leader>a [autoformat]
-    nnoremap <silent>[autoformat] :Autoformat<CR>
+    nnoremap [codefmt] <Nop>
+    nmap     <Leader>a [codefmt]
+    nnoremap <silent>[codefmt] :FormatCode<CR>
 '''
+
+[[plugins]] # vim-maktaba
+repo = 'google/vim-glaive'
+on_ft = ['javascript', 'javascript.jsx']
 
 [[plugins]] # markdown syntax
 repo = 'rcmdnk/vim-markdown'
