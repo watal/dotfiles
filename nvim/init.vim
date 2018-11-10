@@ -119,8 +119,11 @@ set shortmess+=I
 set tabstop=4
 " 行頭でのタブ文字の表示幅
 set shiftwidth=4
-" JavaScriptの場合はタブ設定を2文字に
+" 特定のファイル形式のみタブ設定を2文字に
 autocmd MyAutoCmd FileType javascript set tabstop=2 shiftwidth=2
+autocmd MyAutoCmd FileType ruby set tabstop=2 shiftwidth=2
+autocmd MyAutoCmd FileType html set tabstop=2 shiftwidth=2
+autocmd MyAutoCmd FileType css set tabstop=2 shiftwidth=2
 " Tab文字を半角スペースに
 set expandtab
 " 自動インデント
