@@ -195,13 +195,31 @@ on_ft = 'slim'
 repo = 'othree/html5.vim'
 on_ft = 'html'
 
-[[plugins]] # javascript syntax
-repo = 'othree/yajs.vim'
-on_ft = 'javascript'
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = ['javascript', 'javascript.jsx']
 
 [[plugins]] # jsx syntax
 repo = 'maxmellon/vim-jsx-pretty'
-on_ft = 'javascript'
+on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]]
+repo = 'othree/javascript-libraries-syntax.vim'
+on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]]
+repo = 'othree/es.next.syntax.vim'
+on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]] # autoformat
+repo = 'Chiel92/vim-autoformat'
+hook_add = '''
+  let g:autoformat_autoindent = 0
+  let g:autoformat_retab = 0
+  let g:autoformat_remove_trailing_spaces = 0
+  autocmd MyAutoCmd BufWrite *.js,*.jsx :Autoformat
+  nnoremap [Space]a :<C-u>Autoformat<CR>
+'''
 
 [[plugins]] # markdown syntax
 repo = 'rcmdnk/vim-markdown'
