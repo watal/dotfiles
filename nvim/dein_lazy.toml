@@ -251,7 +251,7 @@ repo  = 'cespare/vim-toml'
 on_ft = 'toml'
 
 [[plugins]] # YAML syntax
-repo = 'chase/vim-ansible-yaml'
+repo = 'stephpy/vim-yaml'
 on_ft = 'yaml'
 
 [[plugins]] # gnuplot syntax

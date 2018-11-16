@@ -124,6 +124,7 @@ autocmd MyAutoCmd FileType javascript set tabstop=2 shiftwidth=2
 autocmd MyAutoCmd FileType ruby set tabstop=2 shiftwidth=2
 autocmd MyAutoCmd FileType html set tabstop=2 shiftwidth=2
 autocmd MyAutoCmd FileType css set tabstop=2 shiftwidth=2
+autocmd MyAutoCmd FileType yaml set tabstop=2 shiftwidth=2
 " Tab文字を半角スペースに
 set expandtab
 " 自動インデント
