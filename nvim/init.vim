@@ -110,7 +110,7 @@ set termguicolors
 " テキスト挿入中の自動折り返しを日本語に対応
 set formatoptions+=mM
 " filetypeをtexに
-let g:tex_flavor = "latex"
+let g:tex_flavor = 'latex'
 " 起動メッセージoff
 set shortmess+=I
 
@@ -221,16 +221,16 @@ set mouse=a
 " Quickfixのみならば終了
 autocmd MyAutoCmd WinEnter * if (winnr('$') == 1 && (getbufvar(winbufnr(0), '&buftype')) == 'quickfix') | quit | endif
 " NERDTreeのみならば終了
-autocmd MyAutoCmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | quit | endif
+autocmd MyAutoCmd BufEnter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | quit | endif
 
 " 保存時に行末の空白を除去
 function! s:remove_dust()
-    let cursor = getpos(".")
+    let cursor = getpos('.')
 "     保存時に行末の空白を除去
     keeppatterns %s/\s\+$//ge
 "     保存時にtabを4スペースに変換
     keeppatterns %s/\t/    /ge
-    call setpos(".", cursor)
+    call setpos('.', cursor)
     unlet cursor
 endfunction
 autocmd RemoveDust BufWritePre * call <SID>remove_dust()
@@ -240,7 +240,7 @@ autocmd MyAutoCmd QuickFixCmdPost *grep* cwindow
 
 " 選択位置のSyntax情報を表示
 " function! s:get_syn_id(transparent)
-"   let synid = synID(line("."), col("."), 1)
+"   let synid = synID(line('.'), col('.'), 1)
 "   if a:transparent
 "     return synIDtrans(synid)
 "   else
@@ -248,31 +248,31 @@ autocmd MyAutoCmd QuickFixCmdPost *grep* cwindow
 "   endif
 " endfunction
 " function! s:get_syn_attr(synid)
-"   let name = synIDattr(a:synid, "name")
-"   let ctermfg = synIDattr(a:synid, "fg", "cterm")
-"   let ctermbg = synIDattr(a:synid, "bg", "cterm")
-"   let guifg = synIDattr(a:synid, "fg", "gui")
-"   let guibg = synIDattr(a:synid, "bg", "gui")
+"   let name = synIDattr(a:synid, 'name')
+"   let ctermfg = synIDattr(a:synid, 'fg', 'cterm')
+"   let ctermbg = synIDattr(a:synid, 'bg', 'cterm')
+"   let guifg = synIDattr(a:synid, 'fg', 'gui')
+"   let guibg = synIDattr(a:synid, 'bg', 'gui')
 "   return {
-"         \ "name": name,
-"         \ "ctermfg": ctermfg,
-"         \ "ctermbg": ctermbg,
-"         \ "guifg": guifg,
-"         \ "guibg": guibg}
+"        \ 'name': name,
+"        \ 'ctermfg': ctermfg,
+"        \ 'ctermbg': ctermbg,
+"        \ 'guifg': guifg,
+"        \ 'guibg': guibg}
 " endfunction
 " function! s:get_syn_info()
 "   let baseSyn = s:get_syn_attr(s:get_syn_id(0))
-"   echo "name: " . baseSyn.name .
-"         \ " ctermfg: " . baseSyn.ctermfg .
-"         \ " ctermbg: " . baseSyn.ctermbg .
-"         \ " guifg: " . baseSyn.guifg .
-"         \ " guibg: " . baseSyn.guibg
+"   echo 'name: ' . baseSyn.name .
+"        \ ' ctermfg: ' . baseSyn.ctermfg .
+"        \ ' ctermbg: ' . baseSyn.ctermbg .
+"        \ ' guifg: ' . baseSyn.guifg .
+"        \ ' guibg: ' . baseSyn.guibg
 "   let linkedSyn = s:get_syn_attr(s:get_syn_id(1))
-"   echo "link to"
-"   echo "name: " . linkedSyn.name .
-"         \ " ctermfg: " . linkedSyn.ctermfg .
-"         \ " ctermbg: " . linkedSyn.ctermbg .
-"         \ " guifg: " . linkedSyn.guifg .
-"         \ " guibg: " . linkedSyn.guibg
+"   echo 'link to'
+"   echo 'name: ' . linkedSyn.name .
+"        \ ' ctermfg: ' . linkedSyn.ctermfg .
+"        \ ' ctermbg: ' . linkedSyn.ctermbg .
+"        \ ' guifg: ' . linkedSyn.guifg .
+"        \ ' guibg: ' . linkedSyn.guibg
 " endfunction
 " command! SyntaxInfo call s:get_syn_info()
