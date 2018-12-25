@@ -226,10 +226,10 @@ autocmd MyAutoCmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NE
 " 保存時に行末の空白を除去
 function! s:remove_dust()
     let cursor = getpos(".")
-    " 保存時に行末の空白を除去
-    %s/\s\+$//ge
-    " 保存時にtabを4スペースに変換
-    %s/\t/    /ge
+"     保存時に行末の空白を除去
+    keeppatterns %s/\s\+$//ge
+"     保存時にtabを4スペースに変換
+    keeppatterns %s/\t/    /ge
     call setpos(".", cursor)
     unlet cursor
 endfunction
