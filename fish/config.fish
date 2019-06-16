@@ -12,7 +12,29 @@ set -x PATH /usr/local/sbin $PATH
 set -x PATH /usr/local/opt/curl/bin $PATH
 set -x PATH /usr/local/opt/openssl/bin $PATH
 
-# iterm
-# echo -ne "\033]6;1;bg;red;brightness;22\a"
-# echo -ne "\033]6;1;bg;green;brightness;24\a"
-# echo -ne "\033]6;1;bg;blue;brightness;32\a"
+set -x EDITOR vim $EDITOR
+
+set -g fish_color_normal 'c6c8d1'
+set -g fish_color_command 'c6c8d1'
+set -g fish_color_quote '89b8c2'
+set -g fish_color_redirection '89b8c2'
+set -g fish_color_end 'c6c8d1'
+set -g fish_color_error 'e27878'
+set -g fish_color_param '84a0c6'
+set -g fish_color_comment '6b7089'
+set -g fish_color_match 'ffffff' --background=3e445e
+set -g fish_color_selection '89b8c2'
+set -g fish_color_search_match '89b8c2'
+set -g fish_color_operator '83a0c6'
+set -g fish_color_escape '9ac684'
+set -g fish_color_cwd '89b8c2'
+set -g fish_color_autosuggestion '6b7089'
+set -g fish_color_host 'c6c8d1'
+set -g fish_color_user '89b8c2'
+set -g fish_color_cansel '84a0c6'
+# set -g fish_color_valid_path --underline
+set -g fish_color_history_current '89b8c2'
+set -g fish_pager_color_completion 'c6c8d1'
+set -g fish_pager_color_prefix 'c6c8d1' --bold
+set -g fish_pager_color_description '9ac684'
+set -g fish_pager_color_progress '9ac684' --bold
