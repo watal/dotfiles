@@ -1,5 +1,5 @@
 # anyenv
-source '/usr/local/Cellar/anyenv/1.1.0/libexec/../completions/anyenv.fish'
+source '/usr/local/Cellar/anyenv/1.1.1/libexec/../completions/anyenv.fish'
 function anyenv
   set command $argv[1]
   set -e argv[1]
