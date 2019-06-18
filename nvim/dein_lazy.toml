@@ -179,21 +179,12 @@ repo = 'zchee/deoplete-jedi'
 on_ft = 'python'
 
 [[plugins]] # go syntax
-# repo = 'zchee/nvim-go'
-# build = 'make'
-repo = 'fatih/vim-go'
+repo = 'zchee/nvim-go'
+build = 'make'
 on_ft = 'go'
 hook_add = '''
     " :nextなどでバッファ移動時にファイルが変更されていれば書き込む
     autocmd MyAutoCmd FileType go set autowrite
-    " :GoInfo更新時間 Default->800
-    autocmd MyAutoCmd FileType go set updatetime=100
-    " :GoPlayでページをブラウザに読み込まない Default->1
-    let g:go_play_open_browser = 0
-    " キャメルケースに変換(defalut snake_cake)
-    let g:go_addtags_transform = "camelcase"
-    " カーソル上のワードに対して:GoInfo実行
-    let g:go_auto_type_info = 1
 '''
 
 [[plugins]] # go complete

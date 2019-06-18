@@ -97,6 +97,7 @@ hook_add = '''
     \   'c': ['clang'],
     \   'cpp': ['clang'],
     \   'python': ['flake8'],
+    \   'go': ['gometalinter'],
     \}
 '''
 
