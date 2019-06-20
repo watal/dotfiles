@@ -6,12 +6,16 @@ CWD=${1:-$(cd $(dirname $0)/../../; pwd)}
 
 # pip3のパッケージ取得
 # pipInstall() {
-#     pip3 install -r $CMD/python3/
+#     pip3 install -r $CWD/python3/
 # }
 
 
 # シンボリックリンク作成
 symLinks() {
+    # nvim
+    echo $'\e[32mCreate symlinks for vim\e[0m'
+    ln -sf $CWD/nvim/init.vim ~/.vimrc
+
     # nvim
     echo $'\e[32mCreate symlinks for neovim\e[0m'
     ln -sf $CWD/nvim/init.vim ~/.config/nvim/init.vim
@@ -25,15 +29,15 @@ symLinks() {
 
     # peco
     echo $'\e[32mCreate symlinks for peco\e[0m'
-    ln -sf $CMD/peco/config.json ~/.config/peco/config.json
+    ln -sf $CWD/peco/config.json ~/.config/peco/config.json
 
     # grc
     echo $'\e[32mCreate symlinks for grc\e[0m'
-    ln -sf $CMD/grc/conf.mtr ~/.grc/conf.mtr
+    ln -sf $CWD/grc/conf.mtr ~/.grc/conf.mtr
 
     # latexmk
     echo $'\e[32mCreate symlinks for latexmk\e[0m'
-    ln -sf $CMD/latexmk/latexmkrc ~/.latexmkrc
+    ln -sf $CWD/latexmk/latexmkrc ~/.latexmkrc
 
     # karabiner
     echo $'\e[32mCreate symlinks for karabiner\e[0m'
