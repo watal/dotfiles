@@ -22,6 +22,14 @@ symLinks() {
     ln -sf $CWD/nvim/dein.toml ~/.config/dein/dein.toml
     ln -sf $CWD/nvim/dein_lazy.toml ~/.config/dein/dein_lazy.toml
 
+    # fish
+    echo $'\e[32mCreate symlinks for tmux\e[0m'
+    ln -sf $CWD/fish/config.fish ~/.config/fish/config.fish
+    ln -sf $CWD/fish/aliases.fish ~/.config/fish/aliases.fish
+    ln -sf $CWD/fish/anyenv.fish ~/.config/fish/anyenv.fish
+    find $CWD/fish/conf.d/* -type f -print  | awk -F"/" '{ print $NF }' | xargs -I{} ln -sf $CWD/fish/conf.d/{} ~/.config/fish/conf.d/{}
+    find $CWD/fish/functions/* -type f -print  | awk -F"/" '{ print $NF }' | xargs -I{} ln -sf $CWD/fish/functions/{} ~/.config/fish/functions/{}
+
     # tmux
     echo $'\e[32mCreate symlinks for tmux\e[0m'
     ln -sf $CWD/tmux/tmux.conf ~/.tmux.conf
