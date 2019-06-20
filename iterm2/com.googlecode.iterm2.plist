@@ -2715,11 +2715,11 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1655 1027 0 0 1680 1027 </string>
+	<string>7 0 1648 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>972 512 570 401 0 0 1680 1027 </string>
+	<string>0 0 1655 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>655 369 570 401 0 0 1680 1027 </string>
+	<string>833 0 822 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>0 0 822 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
@@ -3474,6 +3474,8 @@
 			<real>0.0</real>
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
+			<key>Unicode Version</key>
+			<integer>8</integer>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -4255,6 +4257,8 @@
 			<real>0.0</real>
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
+			<key>Unicode Version</key>
+			<integer>8</integer>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
