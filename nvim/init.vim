@@ -51,8 +51,8 @@ if has('vim_starting') && dein#check_install()
 endif
 " }}} end dein
 
-" go PATH
-" let g:go_bin_path = $GOPATH.'/bin'
+" golang PATH
+let g:go_bin_path = $GOPATH.'/bin'
 
 filetype plugin indent on
 syntax enable

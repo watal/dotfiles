@@ -40,6 +40,6 @@ set -g fish_pager_color_description '9ac684'
 set -g fish_pager_color_progress '9ac684' --bold
 
 # golang
-set -x GOPATH $HOME/.go
+set -x GOPATH $HOME/src
 set -x PATH $PATH $GOPATH/bin $PATH
 set -x GOROOT /usr/local/Cellar/go/1.12.6/libexec
