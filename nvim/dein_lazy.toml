@@ -185,6 +185,8 @@ on_ft = 'go'
 hook_add = '''
     " :nextなどでバッファ移動時にファイルが変更されていれば書き込む
     autocmd MyAutoCmd FileType go set autowrite
+    " 保存時にGoFmt実行
+    let g:go#fmt#autosave = 1
 '''
 
 [[plugins]] # go complete

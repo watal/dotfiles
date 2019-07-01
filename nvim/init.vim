@@ -130,6 +130,8 @@ autocmd MyAutoCmd FileType css set tabstop=2 shiftwidth=2
 autocmd MyAutoCmd FileType yaml set tabstop=2 shiftwidth=2
 " Tab文字を半角スペースに
 set expandtab
+" 特定のファイル形式のみexpandtabを無効化
+autocmd MyAutoCmd FileType go set noexpandtab
 " 自動インデント
 set autoindent
 set smartindent
