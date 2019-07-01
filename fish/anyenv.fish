@@ -13,7 +13,6 @@ set -x PATH '/Users/watal/.anyenv/envs/pyenv/bin' $PATH
 set -gx PATH '/Users/watal/.anyenv/envs/pyenv/shims' $PATH
 set -gx PYENV_SHELL fish
 source '/Users/watal/.anyenv/envs/pyenv/libexec/../completions/pyenv.fish'
-command pyenv rehash 2>/dev/null
 function pyenv
   set command $argv[1]
   set -e argv[1]
@@ -32,7 +31,6 @@ set -x PATH '/Users/watal/.anyenv/envs/rbenv/bin' $PATH
 set -gx PATH '/Users/watal/.anyenv/envs/rbenv/shims' $PATH
 set -gx RBENV_SHELL fish
 source '/Users/watal/.anyenv/envs/rbenv/libexec/../completions/rbenv.fish'
-command rbenv rehash 2>/dev/null
 function rbenv
   set command $argv[1]
   set -e argv[1]
