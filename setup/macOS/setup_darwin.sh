@@ -56,3 +56,5 @@ symLinks() {
 # 実行
 # pipInstall
 symLinks
+# anyenv-update
+git clone https://github.com/znz/anyenv-update.git "$(anyenv root)/plugins/anyenv-update"
