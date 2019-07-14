@@ -2711,29 +2711,31 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>613 384 445 103 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>541 484 796 486 0 0 1680 1027 </string>
+	<string>189 503 796 486 0 0 1680 1027 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>833 0 822 1027 0 0 1680 1027 </string>
+	<string>0 0 1653 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>21 394 570 401 0 0 1680 1027 </string>
+	<string>831 0 822 1027 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 10</key>
+	<string>0 626 570 401 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 0 822 1027 0 0 1680 1027 </string>
+	<string>407 -123 570 746 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>0 0 822 1027 0 0 1680 1027 </string>
+	<string>831 626 570 401 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>1108 0 822 1027 0 0 1680 1027 </string>
+	<string>542 580 570 401 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>550 0 570 1027 0 0 1680 1027 </string>
+	<string>831 626 570 401 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
-	<string>830 0 822 1027 0 0 1680 1027 </string>
+	<string>831 626 570 401 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 7</key>
-	<string>830 0 822 1027 0 0 1680 1027 </string>
+	<string>831 0 822 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 8</key>
-	<string>0 0 822 1027 0 0 1680 1027 </string>
+	<string>831 626 570 401 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 9</key>
-	<string>443 434 570 401 0 0 1680 1027 </string>
+	<string>966 626 570 401 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -3146,6 +3148,13 @@
 					<integer>11</integer>
 					<key>Text</key>
 					<string>0x7f</string>
+				</dict>
+				<key>0x66-0x80000</key>
+				<dict>
+					<key>Action</key>
+					<integer>11</integer>
+					<key>Text</key>
+					<string>0x1b 0x1b 0x5b 0x43</string>
 				</dict>
 				<key>0xf700-0x220000</key>
 				<dict>
@@ -3930,6 +3939,13 @@
 					<key>Text</key>
 					<string>0x7f</string>
 				</dict>
+				<key>0x66-0x80000</key>
+				<dict>
+					<key>Action</key>
+					<integer>11</integer>
+					<key>Text</key>
+					<string>0x1b 0x1b 0x5b 0x43</string>
+				</dict>
 				<key>0xf700-0x220000</key>
 				<dict>
 					<key>Action</key>
@@ -4345,7 +4361,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-06-23T09:58:55Z</date>
+	<date>2019-07-11T01:29:12Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
