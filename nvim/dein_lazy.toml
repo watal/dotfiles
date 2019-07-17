@@ -47,6 +47,12 @@ hook_add = '''
 #   endfunction
 # '''
 
+
+[[plugins]] # switch filetype
+repo = 'osyo-manga/vim-precious'
+depends = 'context_filetype.vim'
+on_ft = 'toml'
+
 [[plugins]] # deoplete
 repo = 'Shougo/deoplete.nvim'
 depends = 'context_filetype.vim'
