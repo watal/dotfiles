@@ -281,3 +281,6 @@ repo = 'dhruvasagar/vim-table-mode'
 
 [[plugins]] # easymotion
 repo = 'Lokaltog/vim-easymotion'
+
+[[plugins]] # tabnine
+repo = 'zxqfl/tabnine-vim'
