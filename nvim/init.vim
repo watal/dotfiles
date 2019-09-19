@@ -20,7 +20,6 @@ let s:cache_home = empty($XDG_CACHE_HOME) ? expand('$HOME/.cache') : $XDG_CACHE_
 let s:config_home = empty($XDG_CONFIG_HOME) ? expand('$HOME/.config') : $XDG_CONFIG_HOME
 let g:python_host_prog = expand('$PYENV_ROOT/shims/python2')
 let g:python3_host_prog = expand('$PYENV_ROOT/shims/python3')
-let g:ruby_host_prog = expand('$RBENV_ROOT/shims/ruby')
 
 " {{{ dein
 let s:dein_dir = s:cache_home . '/dein'
