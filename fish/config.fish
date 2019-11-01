@@ -47,3 +47,8 @@ set -x GOROOT /usr/local/Cellar/go/1.12.6/libexec
 if [ (echo $TMUX_PANE) != "" -a (echo $TMUX_PANE_AUTORUN) != "0" ]
     ~/.tmux/plugins/tmux-logging/scripts/toggle_logging.sh; set -x TMUX_PANE_AUTORUN 0
 end
+
+# Android SDK
+set -x ANDROID_HOME $HOME/Library/Android/sdk
+set -x PATH $ANDROID_HOME/tools $PATH
+set -x PATH $ANDROID_HOME/platform-tools $PATH
