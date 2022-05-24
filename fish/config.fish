@@ -8,6 +8,7 @@ set -x LC_ALL en_US.UTF-8
 # tex
 set -x PATH /Library/TeX/texbin $PATH
 
+set -x PATH /usr/local/bin $PATH
 set -x PATH /usr/local/sbin $PATH
 set -x PATH /usr/local/opt/curl/bin $PATH
 set -x PATH /usr/local/opt/openssl/bin $PATH
@@ -42,13 +43,18 @@ set -g fish_pager_color_progress '9ac684' --bold
 # golang
 set -x GOPATH $HOME/src
 set -x PATH $PATH $GOPATH/bin $PATH
-set -x GOROOT /usr/local/Cellar/go/1.12.6/libexec
+set -x GOROOT /usr/local/Cellar/go/1.18.2/libexec
 
-if [ (echo $TMUX_PANE) != "" -a (echo $TMUX_PANE_AUTORUN) != "0" ]
-    ~/.tmux/plugins/tmux-logging/scripts/toggle_logging.sh; set -x TMUX_PANE_AUTORUN 0
-end
+# if [ (echo $TMUX_PANE) != "" -a (echo $TMUX_PANE_AUTORUN) != "0" ]
+#     ~/.tmux/plugins/tmux-logging/scripts/toggle_logging.sh; set -x TMUX_PANE_AUTORUN 0
+# end
 
 # Android SDK
 set -x ANDROID_HOME $HOME/Library/Android/sdk
 set -x PATH $ANDROID_HOME/tools $PATH
 set -x PATH $ANDROID_HOME/platform-tools $PATH
+
+set -x TMUX_TMPDIR /tmp
+
+set -x PATH /Users/watal/development/flutter/bin $PATH
+set -x PATH /Applications/Genymotion.app/Contents/MacOS/tools/ $PATH
