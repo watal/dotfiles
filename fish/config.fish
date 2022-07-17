@@ -58,3 +58,4 @@ set -x TMUX_TMPDIR /tmp
 
 set -x PATH /Users/watal/development/flutter/bin $PATH
 set -x PATH /Applications/Genymotion.app/Contents/MacOS/tools/ $PATH
+set -x PATH /Users/watal/.cargo/bin $PATH
