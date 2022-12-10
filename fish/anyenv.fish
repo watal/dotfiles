@@ -1,10 +1,29 @@
 # anyenv
-source "/usr/local/Cellar/anyenv/1.1.4/libexec/../completions/anyenv.fish"
+source "/usr/local/Cellar/anyenv/1.1.5/libexec/../completions/anyenv.fish"
 function anyenv
   set command $argv[1]
   set -e argv[1]
 
   command anyenv "$command" $argv
+end
+
+#nodevn
+set -gx NODENV_ROOT "/Users/watal/.anyenv/envs/nodenv"
+set -gx PATH $PATH "/Users/watal/.anyenv/envs/nodenv/bin"
+set -gx PATH '/Users/watal/.anyenv/envs/nodenv/shims' $PATH
+set -gx NODENV_SHELL fish
+source '/Users/watal/.anyenv/envs/nodenv/libexec/../completions/nodenv.fish'
+command nodenv rehash 2>/dev/null
+function nodenv
+  set command $argv[1]
+  set -e argv[1]
+
+  switch "$command"
+  case rehash shell
+    source (nodenv "sh-$command" $argv|psub)
+  case '*'
+    command nodenv "$command" $argv
+  end
 end
 
 # pyenv
@@ -43,3 +62,5 @@ function rbenv
     command rbenv "$command" $argv
   end
 end
+
+eval (nodenv init - | source)

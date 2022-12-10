@@ -4,6 +4,7 @@ source "$HOME/.config/fish/anyenv.fish"
 set -x theme_display_user yes
 set -x LANG en_US
 set -x LC_ALL en_US.UTF-8
+set -x SHELL /usr/local/bin/fish
 
 # tex
 set -x PATH /Library/TeX/texbin $PATH
@@ -43,7 +44,7 @@ set -g fish_pager_color_progress '9ac684' --bold
 # golang
 set -x GOPATH $HOME/src
 set -x PATH $PATH $GOPATH/bin $PATH
-set -x GOROOT /usr/local/Cellar/go/1.18.2/libexec
+set -x GOROOT /usr/local/Cellar/go/1.19.2/libexec
 
 # if [ (echo $TMUX_PANE) != "" -a (echo $TMUX_PANE_AUTORUN) != "0" ]
 #     ~/.tmux/plugins/tmux-logging/scripts/toggle_logging.sh; set -x TMUX_PANE_AUTORUN 0
