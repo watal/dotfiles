@@ -1,44 +1,44 @@
-[[plugins]] # denite
-repo = 'Shougo/denite.nvim'
-on_cmd = 'Denite'
-hook_add = '''
-    nnoremap [denite] <Nop>
-    nmap <Leader>d [denite]
-    nnoremap <silent> [denite]h :<C-u>Denite file_mru<CR>
-    nnoremap <silent> [denite]g :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
-    nnoremap <silent> [denite]r :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
-    nnoremap <silent> [denite]f :<C-u>Denite file_rec<CR>
-    nnoremap <silent> [denite]l :<C-u>Denite line<CR>
-    nnoremap <silent> [denite]y :<C-u>Denite neoyank<CR>
-    nnoremap sb :<C-u>Denite buffer<CR>
-'''
-hook_source = '''
-    call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
-    call denite#custom#var('grep', 'command', ['ag'])
-    call denite#custom#var('grep', 'recursive_opts', [])
-    call denite#custom#var('grep', 'pattern_opt', [])
-    call denite#custom#var('grep', 'default_opts', ['--follow', '--no-group', '--no-color'])
-'''
-
-[[plugins]] # neoyank
-repo = 'Shougo/neoyank.vim'
-on_event = 'TextYankPost'
-on_if = 1
-on_source = 'denite.nvim'
-
-[[plugins]] # neomru
-repo = 'Shougo/neomru.vim'
-on_source = 'denite.nvim'
-
-[[plugins]] # deol
-repo = 'Shougo/deol.nvim'
-on_cmd = 'Deol'
-depends = 'denite.nvim'
-hook_add = '''
-    nmap     <Leader>s [deol]
-    nnoremap <silent> [deol]n :<C-u>call deol#new({'command': 'fish'})<CR>
-    nnoremap <silent> [deol]s :<C-u>Deol<CR>
-'''
+#[[plugins]] # denite
+#repo = 'Shougo/denite.nvim'
+#on_cmd = 'Denite'
+#hook_add = '''
+#    nnoremap [denite] <Nop>
+#    nmap <Leader>d [denite]
+#    nnoremap <silent> [denite]h :<C-u>Denite file_mru<CR>
+#    nnoremap <silent> [denite]g :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
+#    nnoremap <silent> [denite]r :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
+#    nnoremap <silent> [denite]f :<C-u>Denite file_rec<CR>
+#    nnoremap <silent> [denite]l :<C-u>Denite line<CR>
+#    nnoremap <silent> [denite]y :<C-u>Denite neoyank<CR>
+#    nnoremap sb :<C-u>Denite buffer<CR>
+#'''
+#hook_source = '''
+#    call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+#    call denite#custom#var('grep', 'command', ['ag'])
+#    call denite#custom#var('grep', 'recursive_opts', [])
+#    call denite#custom#var('grep', 'pattern_opt', [])
+#    call denite#custom#var('grep', 'default_opts', ['--follow', '--no-group', '--no-color'])
+#'''
+#
+#[[plugins]] # neoyank
+#repo = 'Shougo/neoyank.vim'
+#on_event = 'TextYankPost'
+#on_if = 1
+#on_source = 'denite.nvim'
+#
+#[[plugins]] # neomru
+#repo = 'Shougo/neomru.vim'
+#on_source = 'denite.nvim'
+#
+#[[plugins]] # deol
+#repo = 'Shougo/deol.nvim'
+#on_cmd = 'Deol'
+#depends = 'denite.nvim'
+#hook_add = '''
+#    nmap     <Leader>s [deol]
+#    nnoremap <silent> [deol]n :<C-u>call deol#new({'command': 'fish'})<CR>
+#    nnoremap <silent> [deol]s :<C-u>Deol<CR>
+#'''
 # hook_source = '''
 #   autocmd MyAutoCmd FileType deol call s:on_deol()
 #   function! s:on_deol() abort
@@ -72,31 +72,31 @@ on_ft = 'vim'
 repo = 'Shougo/neoinclude.vim'
 on_ft = ['c', 'cpp']
 
-[[plugins]] # neosnippet
-repo = 'Shougo/neosnippet'
-depends = ['neosnippet-snippets', 'context_filetype.vim']
-on_event = 'InsertCharPre'
-on_ft = 'snippet'
-hook_add = '''
-    imap <C-k> <Plug>(neosnippet_jump_or_expand)
-    smap <C-k> <Plug>(neosnippet_jump_or_expand)
-    xmap <C-k> <Plug>(neosnippet_expand_target)
-'''
-hook_source = '''
-    let g:neosnippet#enable_snipmate_compatibility = 1
-    let g:neosnippet#enable_completed_snippet = 1
-    let g:neosnippet#expand_word_boundary = 1
-'''
-
-[[plugins]] # snippet
-repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]] # echodoc
-repo = 'Shougo/echodoc.vim'
-on_event = 'CompleteDone'
-hook_source = '''
-    call echodoc#enable()
-'''
+#[[plugins]] # neosnippet
+#repo = 'Shougo/neosnippet'
+#depends = ['neosnippet-snippets', 'context_filetype.vim']
+#on_event = 'InsertCharPre'
+#on_ft = 'snippet'
+#hook_add = '''
+#    imap <C-k> <Plug>(neosnippet_jump_or_expand)
+#    smap <C-k> <Plug>(neosnippet_jump_or_expand)
+#    xmap <C-k> <Plug>(neosnippet_expand_target)
+#'''
+#hook_source = '''
+#    let g:neosnippet#enable_snipmate_compatibility = 1
+#    let g:neosnippet#enable_completed_snippet = 1
+#    let g:neosnippet#expand_word_boundary = 1
+#'''
+#
+#[[plugins]] # snippet
+#repo = 'Shougo/neosnippet-snippets'
+#
+#[[plugins]] # echodoc
+#repo = 'Shougo/echodoc.vim'
+#on_event = 'CompleteDone'
+#hook_source = '''
+#    call echodoc#enable()
+#'''
 
 [[plugins]] # filetype
 repo = 'Shougo/context_filetype.vim'
@@ -184,16 +184,48 @@ on_ft = ['c', 'cpp']
 repo = 'zchee/deoplete-jedi'
 on_ft = 'python'
 
-[[plugins]] # go syntax
-repo = 'zchee/nvim-go'
-build = 'make'
-on_ft = 'go'
-hook_add = '''
-    " :nextなどでバッファ移動時にファイルが変更されていれば書き込む
-    autocmd MyAutoCmd FileType go set autowrite
-    " 保存時にGoFmt実行
-    let g:go#fmt#autosave = 1
-'''
+#[[plugins]] # go syntax
+#repo = 'fatih/vim-go'
+#on_ft = 'go'
+#hook_add = '''
+#    "  参考: https://github.com/hnakamur/vim-go-tutorial-ja
+#
+#    " :nextなどでバッファ移動時にファイルが変更されていれば書き込む
+#    " :GoBuildするときにファイルを保存する必要がなくなる
+#    autocmd FileType go set autowrite
+#
+#    " === VIM-GO OPTIONS ===
+#    " GoRunの結果をsplitで表示 Default->"vsplit"
+#    let g:go_term_mode = "split"
+#
+#    " :GoFmt時にimportのチェック Default->gofmt
+#    " ファイルが巨大だと保存時の:GoFmtが遅くなるので消しましょう
+#    let g:go_fmt_command = "goimports"
+#
+#    " キャメルケースに変換(defalut snake_cake)
+#    let g:go_addtags_transform = "camelcase"
+#
+#    " :GoMetaLinterで呼び出すコマンド Default->['vet', 'golint', 'errcheck']
+#    " let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+#
+#    " 自動保存時にLinter有効化 Default->0
+#    let g:go_metalinter_autosave = 1
+#
+#    " 自動保存時に走らせるLinter Default->['vet', 'golint']
+#    " let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+#
+#    " 自動保存時に走らせるLinterタイムアウト Default->"5s"
+#    " let g:go_metalinter_deadline = "5s"
+#'''
+#repo = 'zchee/nvim-go'
+#build = 'make'
+#on_ft = 'go'
+#hook_add = '''
+#    " :nextなどでバッファ移動時にファイルが変更されていれば書き込む
+#    autocmd MyAutoCmd FileType go set autowrite
+#    " 保存時にGoFmt実行
+#    let g:go#fmt#autosave = 1
+#'''
 
 [[plugins]] # go complete
 repo = 'zchee/deoplete-go'

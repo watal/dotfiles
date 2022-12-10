@@ -1,48 +1,48 @@
 [[plugins]] # dein
 repo = 'Shougo/dein.vim'
 
-[[plugins]] # defx
-repo = 'Shougo/defx.nvim'
-hook_add = '''
-    autocmd MyAutoCmd FileType defx call s:defx_my_settings()
-        function! s:defx_my_settings() abort
-         " Define mappings
-          nnoremap <silent><buffer><expr> <CR>
-         \ defx#do_action('open')
-          nnoremap <silent><buffer><expr> l
-         \ defx#do_action('open')
-          nnoremap <silent><buffer><expr> E
-         \ defx#do_action('open', 'vsplit')
-          nnoremap <silent><buffer><expr> K
-         \ defx#do_action('new_directory')
-          nnoremap <silent><buffer><expr> N
-         \ defx#do_action('new_file')
-          nnoremap <silent><buffer><expr> d
-         \ defx#do_action('remove')
-          nnoremap <silent><buffer><expr> r
-         \ defx#do_action('rename')
-          nnoremap <silent><buffer><expr> h
-         \ defx#do_action('cd', ['..'])
-          nnoremap <silent><buffer><expr> ~
-         \ defx#do_action('cd')
-          nnoremap <silent><buffer><expr> q
-         \ defx#do_action('quit')
-          nnoremap <silent><buffer><expr> <Space>
-         \ defx#do_action('toggle_select') . 'j'
-          nnoremap <silent><buffer><expr> j
-         \ line('.') == line('$') ? 'gg' : 'j'
-          nnoremap <silent><buffer><expr> k
-         \ line('.') == 1 ? 'G' : 'k'
-          nnoremap <silent><buffer><expr> <C-l>
-         \ defx#do_action('redraw')
-          nnoremap <silent><buffer><expr> <C-g>
-         \ defx#do_action('print')
-        endfunction
-'''
-
-[[plugins]] # vimproc
-repo = 'Shougo/vimproc.vim'
-build = 'make'
+#[[plugins]] # defx
+#repo = 'Shougo/defx.nvim'
+#hook_add = '''
+#    autocmd MyAutoCmd FileType defx call s:defx_my_settings()
+#        function! s:defx_my_settings() abort
+#         " Define mappings
+#          nnoremap <silent><buffer><expr> <CR>
+#         \ defx#do_action('open')
+#          nnoremap <silent><buffer><expr> l
+#         \ defx#do_action('open')
+#          nnoremap <silent><buffer><expr> E
+#         \ defx#do_action('open', 'vsplit')
+#          nnoremap <silent><buffer><expr> K
+#         \ defx#do_action('new_directory')
+#          nnoremap <silent><buffer><expr> N
+#         \ defx#do_action('new_file')
+#          nnoremap <silent><buffer><expr> d
+#         \ defx#do_action('remove')
+#          nnoremap <silent><buffer><expr> r
+#         \ defx#do_action('rename')
+#          nnoremap <silent><buffer><expr> h
+#         \ defx#do_action('cd', ['..'])
+#          nnoremap <silent><buffer><expr> ~
+#         \ defx#do_action('cd')
+#          nnoremap <silent><buffer><expr> q
+#         \ defx#do_action('quit')
+#          nnoremap <silent><buffer><expr> <Space>
+#         \ defx#do_action('toggle_select') . 'j'
+#          nnoremap <silent><buffer><expr> j
+#         \ line('.') == line('$') ? 'gg' : 'j'
+#          nnoremap <silent><buffer><expr> k
+#         \ line('.') == 1 ? 'G' : 'k'
+#          nnoremap <silent><buffer><expr> <C-l>
+#         \ defx#do_action('redraw')
+#          nnoremap <silent><buffer><expr> <C-g>
+#         \ defx#do_action('print')
+#        endfunction
+#'''
+#
+#[[plugins]] # vimproc
+#repo = 'Shougo/vimproc.vim'
+#build = 'make'
 
 [[plugins]] # iceberg
 repo = 'cocopon/iceberg.vim'
@@ -215,37 +215,37 @@ hook_add = '''
 # let g:tmuxline_theme = 'iceberg'
 # '''
 
-[[plugins]] # quickrun
-repo = 'thinca/vim-quickrun'
-depends = 'vimproc'
-hook_add = '''
-    let g:quickrun_config = {
-    \   '_': {
-    \       'outputter' : 'error',
-    \       "outputter/buffer/close_on_empty" : 1,
-    \       'outputter/error/success' : 'null',
-    \       'outputter/error/error' : 'quickfix',
-    \       'runner': 'vimproc',
-    \       'runner/vimproc/updatetime' : 40,
-    \   },
-    \   'tex': {
-    \       'command' : 'latexmk',
-    \       'cmdopt' : '-pv',
-    \       'exec' : '%c %o %s',
-    \       'srcfile' : expand("%"),
-    \       'hook/sweep/files' : [
-    \           '%S:p:r.aux',
-    \           '%S:p:r.bbl',
-    \           '%S:p:r.blg',
-    \           '%S:p:r.dvi',
-    \           '%S:p:r.fdb_latexmk',
-    \           '%S:p:r.fls',
-    \           '%S:p:r.log',
-    \           '%S:p:r.out'
-    \       ],
-    \   },
-    \}
-'''
+#[[plugins]] # quickrun
+#repo = 'thinca/vim-quickrun'
+#depends = 'vimproc'
+#hook_add = '''
+#    let g:quickrun_config = {
+#    \   '_': {
+#    \       'outputter' : 'error',
+#    \       "outputter/buffer/close_on_empty" : 1,
+#    \       'outputter/error/success' : 'null',
+#    \       'outputter/error/error' : 'quickfix',
+#    \       'runner': 'vimproc',
+#    \       'runner/vimproc/updatetime' : 40,
+#    \   },
+#    \   'tex': {
+#    \       'command' : 'latexmk',
+#    \       'cmdopt' : '-pv',
+#    \       'exec' : '%c %o %s',
+#    \       'srcfile' : expand("%"),
+#    \       'hook/sweep/files' : [
+#    \           '%S:p:r.aux',
+#    \           '%S:p:r.bbl',
+#    \           '%S:p:r.blg',
+#    \           '%S:p:r.dvi',
+#    \           '%S:p:r.fdb_latexmk',
+#    \           '%S:p:r.fls',
+#    \           '%S:p:r.log',
+#    \           '%S:p:r.out'
+#    \       ],
+#    \   },
+#    \}
+#'''
 
 [[plugins]] # comment
 repo = 'tyru/caw.vim'
@@ -279,8 +279,8 @@ hook_add = '''
 [[plugins]] # table-mode
 repo = 'dhruvasagar/vim-table-mode'
 
-[[plugins]] # easymotion
-repo = 'Lokaltog/vim-easymotion'
+#[[plugins]] # easymotion
+#repo = 'Lokaltog/vim-easymotion'
 
 # [[plugins]] # tabnine
 # repo = 'zxqfl/tabnine-vim'
