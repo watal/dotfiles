@@ -165,21 +165,6 @@ set completeopt=menuone,longest
 " キーマップ
 inoremap <C-c> <Esc>
 " nnoremap , \
-nnoremap ; :
-nnoremap : ;
-vnoremap ; :
-vnoremap : ;
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
-nnoremap gj j
-nnoremap gk k
-vnoremap gj j
-vnoremap gk k
-nnoremap ZZ <Nop>
-nnoremap ZQ <Nop>
-nnoremap Q <Nop>
 noremap <Leader>h ^
 noremap <Leader>l $
 nnoremap <Leader>w :<C-u>w<CR>
