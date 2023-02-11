@@ -44,7 +44,7 @@ httplib2==0.20.2
 idna==3.3
 ipaddress==1.0.23
 ipykernel==6.15.1
-ipython==8.4.0
+ipython==8.10.0
 ipython-genutils==0.2.0
 ipywidgets==7.7.1
 isort==5.10.1
