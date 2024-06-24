@@ -60,7 +60,7 @@ syntax enable
 " encoding
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=utf-8,iso2022-jp,euc-jp,sjis
+set fileencodings=utf-8,cp932,euc-jp
 scriptencoding utf-8
 " ファイルフォーマットの識別
 set fileformats=unix,dos,mac
@@ -119,19 +119,15 @@ set shortmess+=I
 
 " インデント系
 " 行頭以外でのタブ文字の表示幅
-set tabstop=4
+"set tabstop=4
 " 行頭でのタブ文字の表示幅
-set shiftwidth=4
+"set shiftwidth=4
 " 特定のファイル形式のみタブ設定を2文字に
-autocmd MyAutoCmd FileType javascript set tabstop=2 shiftwidth=2
-autocmd MyAutoCmd FileType ruby set tabstop=2 shiftwidth=2
-autocmd MyAutoCmd FileType html set tabstop=2 shiftwidth=2
-autocmd MyAutoCmd FileType css set tabstop=2 shiftwidth=2
-autocmd MyAutoCmd FileType yaml set tabstop=2 shiftwidth=2
-" Tab文字を半角スペースに
-set expandtab
-" 特定のファイル形式のみexpandtabを無効化
-autocmd MyAutoCmd FileType go set noexpandtab
+"autocmd MyAutoCmd FileType javascript set tabstop=2 shiftwidth=2
+"autocmd MyAutoCmd FileType ruby set tabstop=2 shiftwidth=2
+"autocmd MyAutoCmd FileType html set tabstop=2 shiftwidth=2
+"autocmd MyAutoCmd FileType css set tabstop=2 shiftwidth=2
+"autocmd MyAutoCmd FileType yaml set tabstop=2 shiftwidth=2
 " 自動インデント
 set autoindent
 set smartindent
@@ -213,18 +209,18 @@ autocmd MyAutoCmd WinEnter * if (winnr('$') == 1 && (getbufvar(winbufnr(0), '&bu
 " NERDTreeのみならば終了
 autocmd MyAutoCmd BufEnter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | quit | endif
 
-" 保存時に行末の空白を除去
-function! s:remove_dust()
-    let cursor = getpos('.')
-"     保存時に行末の空白を除去
-    keeppatterns %s/\s\+$//ge
-"     保存時にtabを4スペースに変換
-    keeppatterns %s/\t/    /ge
-    call setpos('.', cursor)
-    unlet cursor
-endfunction
-autocmd RemoveDust BufWritePre * call <SID>remove_dust()
-autocmd MyAutoCmd filetype markdown autocmd! RemoveDust
+"" 保存時に行末の空白を除去
+"function! s:remove_dust()
+"    let cursor = getpos('.')
+""     保存時に行末の空白を除去
+"    keeppatterns %s/\s\+$//ge
+""     保存時にtabを4スペースに変換
+"    keeppatterns %s/\t/    /ge
+"    call setpos('.', cursor)
+"    unlet cursor
+"endfunction
+"autocmd RemoveDust BufWritePre * call <SID>remove_dust()
+"autocmd MyAutoCmd filetype markdown autocmd! RemoveDust
 
 autocmd MyAutoCmd QuickFixCmdPost *grep* cwindow
 

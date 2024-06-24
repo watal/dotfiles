@@ -44,7 +44,7 @@ set -g fish_pager_color_progress '9ac684' --bold
 # golang
 set -x GOPATH $HOME/src
 set -x PATH $PATH $GOPATH/bin $PATH
-set -x GOROOT /usr/local/Cellar/go/1.22.1/libexec
+set -x GOROOT /usr/local/Cellar/go/1.22.4/libexec
 
 # if [ (echo $TMUX_PANE) != "" -a (echo $TMUX_PANE_AUTORUN) != "0" ]
 #     ~/.tmux/plugins/tmux-logging/scripts/toggle_logging.sh; set -x TMUX_PANE_AUTORUN 0
@@ -64,3 +64,6 @@ set -x PATH /Users/watal/.cargo/bin $PATH
 set -x WORKON_HOME $HOME/.virtualenvs
 set -x VIRTUALENVWRAPPER_PYTHON /usr/local/bin/python3
 set -x VIRTUALENVWRAPPER_VIRTUALENV /usr/local/bin/virtualenv
+set -gx KUBECONFIG "/Users/watal/ntnx"
+
+set -gx PATH $PATH $HOME/.krew/bin
