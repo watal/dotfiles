@@ -59,8 +59,7 @@ syntax enable
 
 " encoding
 set encoding=utf-8
-set fileencoding=utf-8
-set fileencodings=utf-8,cp932,euc-jp
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 scriptencoding utf-8
 " ファイルフォーマットの識別
 set fileformats=unix,dos,mac
@@ -78,8 +77,8 @@ set showcmd
 " コマンド、検索パターンを50まで保存
 set history=50
 " クリップボード共有
-let g:clipboard = {'copy': {'+': 'pbcopy', '*': 'pbcopy'}, 'paste': {'+': 'pbpaste', '*': 'pbpaste'}, 'name': 'pbcopy', 'cache_enabled': 0}
-set clipboard+=unnamedplus
+"let g:clipboard = {'copy': {'+': 'pbcopy', '*': 'pbcopy'}, 'paste': {'+': 'pbpaste', '*': 'pbpaste'}, 'name': 'pbcopy', 'cache_enabled': 0}
+set clipboard=unnamedplus
 
 " 表示系
 " 行番号を表示
