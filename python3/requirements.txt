@@ -191,4 +191,4 @@ Werkzeug==3.0.1
 widgetsnbextension==4.0.7
 wrapt==1.15.0
 yapf==0.40.1
-zipp==3.15.0
+zipp==3.19.1
