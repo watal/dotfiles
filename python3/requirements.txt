@@ -164,7 +164,7 @@ tmuxp==1.16.1
 toml==0.10.2
 tomli==2.0.1
 tomlkit==0.11.8
-tornado==6.3.3
+tornado==6.4.1
 traitlets==5.9.0
 types-cryptography==3.3.23.2
 types-enum34==1.1.8
