@@ -48,7 +48,7 @@ google-auth-oauthlib==1.0.0
 googleapis-common-protos==1.59.1
 greenlet==2.0.2
 httplib2==0.22.0
-idna==3.4
+idna==3.7
 importlib-metadata==6.7.0
 ipaddress==1.0.23
 ipykernel==6.23.2
